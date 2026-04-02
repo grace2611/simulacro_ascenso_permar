@@ -37,6 +37,7 @@ color: rgb(155, 175, 157);
 font-size:120px;
 font-family:"Lilita One",sans-serif;
 margin-bottom:5px;
+text-align: left;
 }
 
 /* INFO */
@@ -120,6 +121,7 @@ margin-top:0%;
 margin-bottom:25px;
 line-height:1.4;
 letter-spacing:1px;
+text-align: left;
 }
 
 /* OPCIONES */
@@ -229,13 +231,13 @@ padding-top:20px;
 
 /* TITULO */
 #titulo{
-font-size:48px;
+font-size:100px;
 -webkit-text-stroke: 1px rgb(117, 139, 120);
 }
 
 /* INFO */
 .info{
-font-size:20px;
+font-size:40px;
 text-align:center;
 }
 
@@ -246,7 +248,7 @@ padding:20px;
 
 /* PREGUNTA */
 #pregunta{
-font-size:22px;
+font-size:80px;
 }
 
 /* OPCIONES */
@@ -255,7 +257,7 @@ gap:10px;
 }
 
 .opcion{
-font-size:15px;
+font-size:55px;
 padding:14px;
 }
 
@@ -267,15 +269,15 @@ padding:12px;
 
 /* evita zoom en inputs */
 input, button{
-font-size:16px;
+font-size:26px;
 }
 
 /* botón salir más compacto */
 .btn-salir{
 top:10px;
 right:10px;
-font-size:16px;
-padding:8px 12px;
+font-size:26px;
+padding:10px 14px;
 }
 
 }
