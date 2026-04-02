@@ -9,6 +9,7 @@ const categoria = params.get("categoria");
 // =============================
 let banco = {
 
+
 cultura: [
 
 { pregunta: "¿Cuál fue el primer conflicto internacional en el que participó la República Peruana?", opciones: ["La Guerra con la Gran Venezuela (1828-1829)", "La Guerra con la Gran Colombia (1828-1829)", "La Guerra con el Gran Ecuador (1828-1829)", "La Guerra con la Gran Brasilia (1828-1829)"], correcta: 1, fuente: "Basadre, J. (2014). Historia de la República del Perú. Ediciones Copé." },
@@ -385,28 +386,62 @@ oficinista: [
 
 ]
 
+
 };
+
+// =============================
+// VALIDACIÓN
+// =============================
+if (!categoria || !banco[categoria]) {
+  alert("⚠️ Categoría no válida");
+  window.location.href = "index.html";
+}
+
+// =============================
+// 🔀 MEZCLAR PREGUNTAS
+// =============================
+function mezclar(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+let preguntas = mezclar([...banco[categoria]]);
 
 // =============================
 // VARIABLES
 // =============================
-let preguntas = banco[categoria];
 let i = 0;
 let puntaje = 0;
 let respondido = false;
-let activo = false;
+
+// 🔥 FASES
+let faseActual = 1;
+let limitesFase = [25, 50, 75, 100];
+
+// 🔥 EXPLICACIÓN PERSISTENTE
+let modoExplicacion = false;
 
 // =============================
 // DOM
 // =============================
-document.getElementById("titulo").textContent = categoria.toUpperCase();
+const titulo = document.getElementById("titulo");
+let expBtn = document.getElementById("expBtn");
+let nextBtn = document.getElementById("nextBtn");
+let expText = document.getElementById("expText");
 
-const expBtn = document.getElementById("expBtn");
-const nextBtn = document.getElementById("nextBtn");
-const expText = document.getElementById("expText");
+titulo.textContent = categoria.toUpperCase();
+
+// 🔥 GUARDAR HTML ORIGINAL
+let quizOriginal = document.querySelector(".quiz-box").innerHTML;
 
 // =============================
-// CARGAR
+// OBTENER LÍMITE
+// =============================
+function getLimiteActual() {
+  return limitesFase[faseActual - 1];
+}
+
+// =============================
+// CARGAR PREGUNTA
 // =============================
 function cargar() {
 
@@ -414,18 +449,22 @@ let p = preguntas[i];
 
 document.getElementById("pregunta").textContent = p.pregunta;
 
-document.getElementById("progreso").textContent =
-`Pregunta ${i+1} de ${preguntas.length}`;
+// 🔥 PROGRESO
+let limite = getLimiteActual();
 
-// BARRA PROGRESO
-let progreso = (i / preguntas.length) * 100;
+document.getElementById("progreso").textContent =
+`Pregunta ${i + 1} de ${limite}`;
+
+// 🔥 BARRA
+let progreso = ((i + 1) / limite) * 100;
 document.getElementById("barra").style.width = progreso + "%";
 
+// 🔥 OPCIONES
 let botones = document.querySelectorAll(".opcion");
 
 botones.forEach((b, index) => {
-b.textContent = p.opciones[index];
-b.classList.remove("correcta", "incorrecta");
+  b.textContent = p.opciones[index];
+  b.classList.remove("correcta", "incorrecta");
 });
 
 respondido = false;
@@ -433,11 +472,15 @@ respondido = false;
 nextBtn.disabled = true;
 nextBtn.style.opacity = "0.5";
 
-expText.classList.remove("show");
-
-expBtn.textContent = "📖 Ver fuente";
-
-activo = false;
+// 🔥 EXPLICACIÓN PERSISTENTE
+if (modoExplicacion) {
+  mostrarExplicacion();
+  expText.classList.add("show");
+  expBtn.textContent = "❌ Ocultar";
+} else {
+  expText.classList.remove("show");
+  expBtn.textContent = "📖 Ver explicación";
+}
 
 }
 
@@ -452,19 +495,18 @@ let correcta = preguntas[i].correcta;
 let botones = document.querySelectorAll(".opcion");
 
 if (index === correcta) {
-
-botones[index].classList.add("correcta");
-puntaje++;
-
+  botones[index].classList.add("correcta");
+  puntaje++;
 } else {
-
-botones[index].classList.add("incorrecta");
-botones[correcta].classList.add("correcta");
-
+  botones[index].classList.add("incorrecta");
+  botones[correcta].classList.add("correcta");
 }
 
-document.getElementById("puntaje").textContent =
-`Puntaje: ${puntaje}`;
+// 🔥 ACTUALIZAR PUNTAJE
+let puntajeHTML = document.getElementById("puntaje");
+if (puntajeHTML) {
+  puntajeHTML.textContent = `Puntaje: ${puntaje}`;
+}
 
 respondido = true;
 
@@ -479,60 +521,148 @@ nextBtn.style.opacity = "1";
 function siguiente() {
 
 if (!respondido) {
-alert("⚠️ Marca una respuesta primero");
-return;
+  alert("⚠️ Marca una respuesta primero");
+  return;
 }
 
 i++;
 
-if (i < preguntas.length) {
-cargar();
-} else {
-mostrarResultado();
+// 🔥 FIN DE FASE
+if (i === getLimiteActual()) {
+  mostrarResumenFase();
+  return;
 }
+
+cargar();
+
+}
+
+// =============================
+// RESUMEN FASE
+// =============================
+function mostrarResumenFase() {
+
+let total = getLimiteActual();
+let nota = (puntaje / total) * 20;
+
+document.querySelector(".quiz-box").innerHTML = `
+<h2>✅ Fase ${faseActual} completada</h2>
+<p>Puntaje: ${puntaje} / ${total}</p>
+<p>Nota: ${nota.toFixed(2)} / 20</p>
+
+<button onclick="continuarFase()">➡ Continuar</button>
+<button onclick="terminarIntento()">❌ Terminar</button>
+`;
+
+}
+
+// =============================
+// CONTINUAR FASE (🔥 CORREGIDO)
+// =============================
+function continuarFase() {
+
+faseActual++;
+
+if (faseActual > 4) {
+  mostrarResultadoFinal();
+  return;
+}
+
+// 🔥 RESTAURAR QUIZ ORIGINAL
+document.querySelector(".quiz-box").innerHTML = quizOriginal;
+
+// 🔥 REASIGNAR DOM
+expBtn = document.getElementById("expBtn");
+nextBtn = document.getElementById("nextBtn");
+expText = document.getElementById("expText");
+
+// 🔥 REACTIVAR EVENTOS
+enlazarEventos();
+
+cargar();
+
+}
+
+// =============================
+// REACTIVAR EVENTOS
+// =============================
+function enlazarEventos() {
+
+document.querySelectorAll(".opcion").forEach((btn, index) => {
+  btn.onclick = () => responder(index);
+});
+
+nextBtn.onclick = siguiente;
+
+expBtn.onclick = () => {
+
+  modoExplicacion = !modoExplicacion;
+
+  if (modoExplicacion) {
+    mostrarExplicacion();
+    expText.classList.add("show");
+    expBtn.textContent = "❌ Ocultar";
+  } else {
+    expText.classList.remove("show");
+    expBtn.textContent = "📖 Ver explicación";
+  }
+
+};
+
+}
+
+// =============================
+// TERMINAR
+// =============================
+function terminarIntento() {
+
+guardarIntento();
+mostrarResultadoFinal();
 
 }
 
 // =============================
 // RESULTADO FINAL
 // =============================
-function mostrarResultado() {
+function mostrarResultadoFinal() {
 
-guardarIntento();
-
-document.querySelector(".explicacion-container").style.display = "none";
-
-let total = preguntas.length;
+let total = getLimiteActual();
 let nota = (puntaje / total) * 20;
 
 document.querySelector(".quiz-box").innerHTML = `
-<h2>🎉 Terminaste</h2>
+<h2>🎉 Resultado final</h2>
+<p>Fase alcanzada: ${faseActual}</p>
 <p>Puntaje: ${puntaje} / ${total}</p>
 <p>Nota: ${nota.toFixed(2)} / 20</p>
-<p>${nota >= 13 ? "✅ Aprobado" : "❌ Desaprobado"}</p>
-<button onclick="location.href='mainpage.html'">Volver</button>
+
+<button onclick="location.href='index.html'">Volver</button>
 <button onclick="location.href='progreso.html'">📊 Ver progreso</button>
 `;
 
 }
 
 // =============================
-// GUARDAR INTENTO
+// GUARDAR
 // =============================
 function guardarIntento() {
 
-let total = preguntas.length;
+let total = getLimiteActual();
 let nota = (puntaje / total) * 20;
 
 let intento = {
-categoria: categoria,
-puntaje: puntaje,
-total: total,
-nota: nota.toFixed(2),
-fecha: new Date().toLocaleString()
+  categoria: categoria,
+  puntaje: puntaje,
+  total: total,
+  nota: nota.toFixed(2),
+  fase: faseActual,
+  fecha: new Date().toLocaleString()
 };
 
 let historial = JSON.parse(localStorage.getItem("historial")) || [];
+
+if (historial.length >= 50) {
+  historial.shift();
+}
 
 historial.push(intento);
 
@@ -541,36 +671,36 @@ localStorage.setItem("historial", JSON.stringify(historial));
 }
 
 // =============================
-// EXPLICACION
+// EXPLICACIÓN
 // =============================
-expBtn.addEventListener("click", () => {
+function mostrarExplicacion() {
 
 let p = preguntas[i];
 
-let texto = `
-<strong>📚 Fuente:</strong><br>
-${p.fuente}
-`;
+let texto = "";
 
 if (p.explicacion) {
+  texto = `<strong>📘 Explicación:</strong><br>${p.explicacion}`;
 
-texto = `
-<strong>📘 Explicación:</strong><br>
-${p.explicacion}<br><br>
-<em>${p.fuente}</em>
-`;
+  if (p.fuente) {
+    texto += `<br><br><em>📚 Fuente: ${p.fuente}</em>`;
+  }
 
+} else {
+  texto = `<strong>📚 Fuente:</strong><br>${p.fuente || "No disponible"}`;
 }
 
 expText.innerHTML = texto;
 
-expText.classList.toggle("show");
-
-activo = !activo;
-
-expBtn.textContent = activo ? "❌ Ocultar" : "📖 Ver fuente";
-
-});
+}
 
 // =============================
+// INICIAR
+// =============================
+enlazarEventos();
 cargar();
+
+// =============================
+function volverMenu(){
+  window.location.href = "index.html";
+}

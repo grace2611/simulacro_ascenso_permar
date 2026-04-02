@@ -148,7 +148,7 @@ p{
 
 /* PC */
 
-@media(min-width: 768px) {
+@media(min-width: 1158px) {
 
   .cards {
     flex-direction: row;
@@ -160,3 +160,4 @@ p{
   }
 
 }
+
