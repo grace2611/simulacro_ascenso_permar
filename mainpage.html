@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulacro Marina</title>
+  <link rel="stylesheet" href="mainpage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fjalla+One&family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fjalla+One&family=Idiqlat:wght@200;300;400&family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="page">
+
+  <div class="main-container">
+
+    <h1 class="tittle">SIMULACRO ASCENSO PERMAR 2026</h1>
+    <p class="subtittle">CUESTIONARIOS ASCENSO PERMAR</p>
+
+    <div class="cards">
+
+      <div class="card" onclick="irQuiz('cultura')">
+        <h2>CULTURA GENERAL</h2>
+        <p>100 preguntas</p>
+      </div>
+
+      <div class="card" onclick="irQuiz('deberes')">
+        <h2>DEBERES</h2>
+        <p>100 preguntas</p>
+      </div>
+
+      <div class="card" onclick="irQuiz('oficinista')">
+        <h2>ESPECIALIDAD</h2>
+        <p>100 preguntas</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 🔥 BOTÓN FUERA DEL MAIN -->
+  <button class="btnprogreso" onclick="window.location.href='progreso.html'">
+    VER MI PROGRESO
+  </button>
+
+</div>
+
+<script>
+function irQuiz(tipo) {
+  window.location.href = `quiz.html?categoria=${tipo}`;
+}
+</script>
+
+</body>
+</html>

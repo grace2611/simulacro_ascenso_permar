@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+
+<link rel="stylesheet" href="quiz.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fjalla+One&family=Lilita+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="titulo"></h1>
+
+<div class="info">
+<p id="progreso"></p>
+<p id="puntaje">Puntaje: 0</p>
+</div>
+
+<div class="progress-container">
+<div class="progress-bar" id="barra"></div>
+</div>
+
+<div class="quiz-box">
+
+<h2 id="pregunta"></h2>
+
+<div class="opciones">
+<button onclick="responder(0)" class="opcion"></button>
+<button onclick="responder(1)" class="opcion"></button>
+<button onclick="responder(2)" class="opcion"></button>
+<button onclick="responder(3)" class="opcion"></button>
+</div>
+
+</div>
+
+<div class="explicacion-container">
+
+<div class="row">
+
+<button id="expBtn">❗ Ver explicación</button>
+
+<div id="expText"></div>
+
+<button id="nextBtn" onclick="siguiente()">Siguiente</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="quiz.js"></script>
+
+</body>
+</html>
