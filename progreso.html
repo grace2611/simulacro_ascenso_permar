@@ -2,20 +2,87 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Progreso</title>
-  <link rel="stylesheet" href="progreso.css">
+  <title>Mi progreso · Simulacro PERMAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      var t = localStorage.getItem("simulacro_theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/progreso.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
-<div class="container">
-  <h1>📊 MI PROGRESO</h1>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
 
-  <div id="historial"></div>
+<div class="container prog">
+  <a class="backlink" href="index.html">← Centro de estudio</a>
+  <h1><span class="h1-icon" aria-hidden="true">📊</span> <span class="h1-text">MI PROGRESO</span></h1>
 
-  <button onclick="volver()">⬅ Volver</button>
-  <button onclick="borrarHistorial()">🗑 Borrar progreso</button>
+  <div id="empty" class="panel glass" hidden></div>
+
+  <div id="content">
+    <section class="panel glass" aria-labelledby="hRes">
+      <h2 id="hRes">Resumen</h2>
+      <div class="tiles" id="summary"></div>
+      <p class="hint">«Respuestas totales» cuenta cada vez que respondiste (incluye repeticiones); «preguntas únicas» son las distintas del banco que ya viste; el <strong>dominio</strong> es el porcentaje de preguntas que ya dominas (no es tu porcentaje de aciertos).</p>
+    </section>
+
+    <section class="panel glass" aria-labelledby="hCat">
+      <h2 id="hCat">Por categoría</h2>
+      <div class="catgrid" id="cats"></div>
+    </section>
+
+    <section class="panel glass" aria-labelledby="hEvo">
+      <h2 id="hEvo">Evolución de tus notas</h2>
+      <div id="evo"></div>
+    </section>
+
+    <section class="panel glass" aria-labelledby="hFase">
+      <h2 id="hFase">Resultados por fase (práctica de 100)</h2>
+      <div id="phases"></div>
+    </section>
+
+    <section class="panel glass" aria-labelledby="hAct">
+      <h2 id="hAct">Actividad de los últimos 14 días</h2>
+      <div id="activity"></div>
+    </section>
+  </div>
+
+  <section class="panel glass" aria-labelledby="hHist">
+    <h2 id="hHist">Historial</h2>
+    <p class="hint">Práctica, simulacros y sesiones. Pulsa un registro para ver el detalle.</p>
+    <ul class="hist" id="hist"></ul>
+    <div class="btnline"><button type="button" class="btn btn-secondary" id="moreBtn" hidden>Ver más</button></div>
+  </section>
+
+  <div class="btnline">
+    <a class="btn btn-primary" href="index.html">⬅ Volver al centro de estudio</a>
+    <button type="button" class="btn btn-secondary" id="settingsBtn">⚙️ Ajustes</button>
+    <button type="button" class="btn btn-danger" id="resetBtn">🗑 Borrar progreso</button>
+  </div>
 </div>
 
-<script src="progreso.js"></script>
+<script src="js/data/cultura.js"></script>
+<script src="js/data/deberes.js"></script>
+<script src="js/data/oficinista.js"></script>
+<script src="js/core/util.js"></script>
+<script src="js/core/config.js"></script>
+<script src="js/core/storage.js"></script>
+<script src="js/core/srs.js"></script>
+<script src="js/core/gamify.js"></script>
+<script src="js/core/stats.js"></script>
+<script src="js/core/engine.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/core/review.js"></script>
+<script src="js/pages/progreso.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>

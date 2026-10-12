@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sesión de estudio · Simulacro PERMAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      var t = localStorage.getItem("simulacro_theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
+
+<div class="container">
+
+  <a class="backlink" href="index.html">← Centro de estudio</a>
+  <h1 id="titulo">Sesión de estudio</h1>
+
+  <!-- 1. Preparación -->
+  <section id="setupView" class="panel glass"></section>
+
+  <!-- 2. Sesión -->
+  <section id="sessionView" hidden>
+    <div class="info">
+      <p id="progreso"></p>
+      <p id="timer" class="timer" hidden aria-label="Tiempo restante"></p>
+      <p id="puntaje">Aciertos: 0</p>
+      <p id="xpSesion" class="chip-xp">+0 XP</p>
+    </div>
+    <div class="progress-container"><div class="progress-bar" id="barra"></div></div>
+    <p id="banner" class="banner" role="status" aria-live="polite" hidden></p>
+
+    <div class="quiz-box">
+      <div class="qmeta"><span class="chip" id="qcat"></span><span class="chip subtle" id="qstate"></span></div>
+      <h2 id="pregunta"></h2>
+      <div class="opciones" id="opciones">
+        <button type="button" class="opcion" data-i="0"></button>
+        <button type="button" class="opcion" data-i="1"></button>
+        <button type="button" class="opcion" data-i="2"></button>
+        <button type="button" class="opcion" data-i="3"></button>
+      </div>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div id="expText" class="expbox" hidden></div>
+    </div>
+
+    <div class="sessionbar">
+      <button type="button" class="btn btn-danger" id="finishBtn">⏹ Finalizar sesión</button>
+      <button type="button" class="btn btn-secondary" id="expBtn" hidden>📖 Ver explicación y fuente</button>
+      <button type="button" class="btn btn-primary" id="nextBtn" disabled>Siguiente</button>
+    </div>
+  </section>
+
+  <!-- 3. Resumen -->
+  <section id="summaryView" class="panel glass summary" hidden></section>
+
+</div>
+
+<script src="js/data/cultura.js"></script>
+<script src="js/data/deberes.js"></script>
+<script src="js/data/oficinista.js"></script>
+<script src="js/core/util.js"></script>
+<script src="js/core/config.js"></script>
+<script src="js/core/storage.js"></script>
+<script src="js/core/srs.js"></script>
+<script src="js/core/gamify.js"></script>
+<script src="js/core/stats.js"></script>
+<script src="js/core/engine.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/pages/estudio.js"></script>
+<script src="js/theme.js"></script>
+
+</body>
+</html>

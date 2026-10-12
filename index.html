@@ -2,59 +2,72 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Simulacro Marina</title>
-  <link rel="stylesheet" href="mainpage.css">
+  <title>Simulacro Marina · Centro de estudio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fjalla+One&family=Lilita+One&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fjalla+One&family=Idiqlat:wght@200;300;400&family=Lilita+One&display=swap" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      var t = localStorage.getItem("simulacro_theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/hub.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
 
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
+
 <div class="page">
 
-  <div class="main-container">
+  <main class="main-container">
 
-    <h1 class="tittle">SIMULACRO ASCENSO PERMAR 2026</h1>
-    <p class="subtittle">CUESTIONARIOS ASCENSO PERMAR</p>
-
-    <div class="cards">
-
-      <div class="card" onclick="irQuiz('cultura')">
-        <h2>CULTURA GENERAL</h2>
-        <p>100 preguntas</p>
+    <div class="hub-top">
+      <div>
+        <span class="subtittle">Cuestionarios ascenso PERMAR</span>
+        <h1 class="tittle">SIMULACRO ASCENSO PERMAR 2026</h1>
       </div>
-
-      <div class="card" onclick="irQuiz('deberes')">
-        <h2>DEBERES</h2>
-        <p>100 preguntas</p>
-      </div>
-
-      <div class="card" onclick="irQuiz('oficinista')">
-        <h2>ESPECIALIDAD</h2>
-        <p>100 preguntas</p>
-      </div>
-
     </div>
 
-  </div>
+    <div id="welcome" class="welcome" hidden></div>
+    <section id="today" class="today" aria-label="Tu día de estudio" hidden></section>
 
-  <!-- 🔥 BOTÓN FUERA DEL MAIN -->
-  <button class="btnprogreso" onclick="window.location.href='progreso.html'">
-    VER MI PROGRESO
-  </button>
+    <section class="hub-section" aria-labelledby="hModos">
+      <h2 id="hModos">¿Qué quieres hacer hoy?</h2>
+      <div class="modes" id="modes"></div>
+    </section>
+
+    <section class="hub-section" aria-labelledby="hCats">
+      <h2 id="hCats">Práctica por categoría (100 preguntas · fases de 25)</h2>
+      <div class="cards" id="cats"></div>
+    </section>
+
+    <div class="btnrow" style="justify-content:center">
+      <button type="button" class="btn btn-secondary" id="settingsBtn">⚙️ Ajustes y objetivo diario</button>
+    </div>
+
+  </main>
 
 </div>
 
-<script>
-function irQuiz(tipo) {
-  window.location.href = `quiz.html?categoria=${tipo}`;
-}
-</script>
+<script src="js/data/cultura.js"></script>
+<script src="js/data/deberes.js"></script>
+<script src="js/data/oficinista.js"></script>
+<script src="js/core/util.js"></script>
+<script src="js/core/config.js"></script>
+<script src="js/core/storage.js"></script>
+<script src="js/core/srs.js"></script>
+<script src="js/core/gamify.js"></script>
+<script src="js/core/stats.js"></script>
+<script src="js/core/engine.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/pages/hub.js"></script>
+<script src="js/theme.js"></script>
 
 </body>
 </html>

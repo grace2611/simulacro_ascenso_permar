@@ -1,64 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Quiz</title>
-
-<link rel="stylesheet" href="quiz.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fjalla+One&family=Lilita+One&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Práctica · Simulacro PERMAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      var t = localStorage.getItem("simulacro_theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body>
 
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
+
 <div class="container">
 
-<h1 id="titulo"></h1>
+  <h1 id="titulo"></h1>
 
-<div class="info">
-<p id="progreso"></p>
-<p id="puntaje">Puntaje: 0</p>
+  <div class="info">
+    <p id="progreso"></p>
+    <p id="puntaje">Puntaje: 0</p>
+    <p id="xpSesion" class="chip-xp">+0 XP</p>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="barra"></div>
+  </div>
+
+  <button class="btn-salir" id="exitBtn" type="button" aria-label="Salir de la práctica">✖</button>
+
+  <div id="questionView">
+    <div class="quiz-box">
+      <h2 id="pregunta"></h2>
+
+      <div class="opciones" id="opciones">
+        <button type="button" class="opcion" data-i="0"></button>
+        <button type="button" class="opcion" data-i="1"></button>
+        <button type="button" class="opcion" data-i="2"></button>
+        <button type="button" class="opcion" data-i="3"></button>
+      </div>
+
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="explicacion-container">
+      <div class="row">
+        <button id="expBtn" type="button">📖 Ver explicación</button>
+        <div id="expText"></div>
+        <button id="nextBtn" type="button" disabled>Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="summaryView" class="quiz-box summary" hidden></div>
+
 </div>
 
-<div class="progress-container">
-<div class="progress-bar" id="barra"></div>
-</div>
-
-<button class="btn-salir" onclick="volverMenu()">✖</button>
-
-<div class="quiz-box">
-
-<h2 id="pregunta"></h2>
-
-<div class="opciones">
-<button onclick="responder(0)" class="opcion"></button>
-<button onclick="responder(1)" class="opcion"></button>
-<button onclick="responder(2)" class="opcion"></button>
-<button onclick="responder(3)" class="opcion"></button>
-</div>
-
-</div>
-
-<div class="explicacion-container">
-
-<div class="row">
-
-<button id="expBtn">❗ Ver explicación</button>
-
-<div id="expText"></div>
-
-<button id="nextBtn" onclick="siguiente()">Siguiente</button>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="quiz.js"></script>
+<script src="js/data/cultura.js"></script>
+<script src="js/data/deberes.js"></script>
+<script src="js/data/oficinista.js"></script>
+<script src="js/core/util.js"></script>
+<script src="js/core/config.js"></script>
+<script src="js/core/storage.js"></script>
+<script src="js/core/srs.js"></script>
+<script src="js/core/gamify.js"></script>
+<script src="js/core/stats.js"></script>
+<script src="js/core/engine.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/pages/quiz.js"></script>
+<script src="js/theme.js"></script>
 
 </body>
 </html>

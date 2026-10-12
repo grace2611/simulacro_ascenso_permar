@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulacro de examen · Simulacro PERMAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      var t = localStorage.getItem("simulacro_theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro">🌙</button>
+
+<div class="container wide">
+
+  <a class="backlink" href="index.html" id="backLink">← Centro de estudio</a>
+  <h1 id="titulo">📝 Simulacro de examen</h1>
+
+  <section id="setupView" class="panel glass"></section>
+
+  <section id="examView" hidden>
+    <div class="exambar glass">
+      <div class="examtimer" id="timer" role="timer" aria-label="Tiempo restante">--:--</div>
+      <div class="examcount" id="counts"></div>
+      <button type="button" class="btn btn-danger" id="finishBtn">⏹ Finalizar examen</button>
+    </div>
+    <div class="progress-container"><div class="progress-bar" id="barra"></div></div>
+    <p id="live" class="sr-only" aria-live="polite"></p>
+
+    <div class="examgrid-wrap">
+      <div class="quiz-box" id="qbox">
+        <div class="qmeta">
+          <span class="chip" id="qnum"></span>
+          <span class="chip subtle" id="qcat"></span>
+          <label class="markbox"><input type="checkbox" id="markChk"> 🚩 Marcar para revisar <kbd>M</kbd></label>
+        </div>
+        <h2 id="pregunta"></h2>
+        <div class="opciones" id="opciones">
+          <button type="button" class="opcion" data-i="0" aria-pressed="false"></button>
+          <button type="button" class="opcion" data-i="1" aria-pressed="false"></button>
+          <button type="button" class="opcion" data-i="2" aria-pressed="false"></button>
+          <button type="button" class="opcion" data-i="3" aria-pressed="false"></button>
+        </div>
+        <p class="hint">Durante el simulacro no se muestra si acertaste ni la explicación. Puedes cambiar tu respuesta (pulsa de nuevo la elegida para borrarla).</p>
+        <div class="sessionbar">
+          <button type="button" class="btn btn-secondary" id="prevBtn">← Anterior</button>
+          <button type="button" class="btn btn-primary" id="nextBtn">Siguiente →</button>
+        </div>
+      </div>
+
+      <aside class="qnav glass" aria-label="Navegador de preguntas">
+        <h2>Preguntas</h2>
+        <div class="legend">
+          <span><i class="dot answered"></i>Respondida</span>
+          <span><i class="dot marked"></i>Marcada</span>
+          <span><i class="dot empty"></i>Sin responder</span>
+        </div>
+        <div class="qgrid" id="qgrid"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="resultView" class="panel glass summary" hidden></section>
+
+</div>
+
+<script src="js/data/cultura.js"></script>
+<script src="js/data/deberes.js"></script>
+<script src="js/data/oficinista.js"></script>
+<script src="js/core/util.js"></script>
+<script src="js/core/config.js"></script>
+<script src="js/core/storage.js"></script>
+<script src="js/core/srs.js"></script>
+<script src="js/core/gamify.js"></script>
+<script src="js/core/stats.js"></script>
+<script src="js/core/engine.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/core/review.js"></script>
+<script src="js/pages/simulacro.js"></script>
+<script src="js/theme.js"></script>
+
+</body>
+</html>
