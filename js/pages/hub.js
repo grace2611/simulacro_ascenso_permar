@@ -25,6 +25,7 @@
         "<p>Aquí verás tus repasos pendientes, tu racha, tu nivel y tu progreso en cuanto estudies. " +
         "Un buen primer paso: <strong>5 minutos</strong> de práctica. Lo que falles se guardará para repasarlo con repetición espaciada.</p>" +
         '<div class="btnrow"><a class="btn btn-primary" href="estudio.html?modo=rapida&min=5">⏱️ Empezar 5 minutos</a>' +
+        '<a class="btn btn-secondary" href="leer.html">📖 Leer preguntas y respuestas</a>' +
         '<a class="btn btn-secondary" href="tarjetas.html">🃏 Probar las tarjetas</a></div>';
     } else {
       welcome.hidden = true; box.hidden = false;
@@ -51,6 +52,7 @@
     /* ---------- modalidades ---------- */
     var errSub = ov.failedEver === 0 ? "Aún no tienes errores registrados" : ov.errorsOpen + " " + U.plural(ov.errorsOpen, "pendiente", "pendientes") + " de dominar · " + ov.failedEver + " falladas en total";
     var modes = [
+      { href: "leer.html", icon: "📖", t: "Leer preguntas y respuestas", s: "Lee todo el banco con la respuesta correcta resaltada" },
       { href: "tarjetas.html", icon: "🃏", t: "Aprender con tarjetas", s: ov.due > 0 ? ov.due + " pendientes saldrán primero" : "Recuerda activamente y evalúate" },
       { href: "estudio.html?modo=errores", icon: "🔁", t: "Repasar mis errores", s: errSub, count: ov.errorsOpen },
       { href: "estudio.html?modo=rapida", icon: "⏱️", t: "Practicar unos minutos", s: "5, 10 o 15 min — o por número de preguntas" },
@@ -58,7 +60,7 @@
       { href: "simulacro.html", icon: "📝", t: "Hacer un simulacro", s: "Condiciones de examen con tiempo límite" },
       { href: "progreso.html", icon: "📊", t: "Consultar mi progreso", s: ov.hasActivity ? ov.answers + " respuestas · " + ov.mastered + " dominadas" : "Tu historial aparecerá aquí" }
     ];
-    var primaryIdx = !ov.hasActivity ? 2 : (ov.due > 0 ? 0 : (ov.errorsOpen > 0 ? 1 : 2));
+    var primaryIdx = !ov.hasActivity ? 3 : (ov.due > 0 ? 1 : (ov.errorsOpen > 0 ? 2 : 3));
     $("#modes").innerHTML = modes.map(function (m, i) {
       return '<a class="mode' + (i === primaryIdx ? " primary" : "") + '" href="' + m.href + '"><span class="mi" aria-hidden="true">' + m.icon + "</span>" +
         '<span><span class="mt">' + m.t + '</span><br><span class="ms">' + esc(m.s) + "</span></span>" +

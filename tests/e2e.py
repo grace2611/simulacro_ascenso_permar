@@ -61,7 +61,7 @@ with sync_playwright() as pw:
     section("Centro de estudio · estado inicial")
     page = new_page(ctx, "index.html")
     check("muestra bienvenida (sin estadísticas ficticias)", page.is_visible("#welcome") and not page.is_visible("#today"))
-    check("6 modalidades", page.locator("#modes .mode").count() == 6)
+    check("7 modalidades", page.locator("#modes .mode").count() == 7)
     check("3 categorías conservadas", page.locator("#cats a.card").count() == 3)
     check("enlaces de categoría correctos", page.get_attribute("#cats a.card >> nth=2", "href") == "quiz.html?categoria=oficinista")
     page.close()
