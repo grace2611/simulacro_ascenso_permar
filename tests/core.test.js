@@ -24,6 +24,31 @@ test('300 preguntas con id único y estable (cultura/deberes/oficinista)', () =>
   });
 });
 
+test('especialidades: 8 bancos de 100 preguntas con ids únicos, 4 opciones y respuesta válida', () => {
+  const path = require('path'), { ROOT } = require('./helpers');
+  const { P } = load(); const seen = new Set();
+  assert.strictEqual(P.ESP.lista.length, 8);
+  P.ESP.lista.forEach(e => {
+    if (!P.DATA[e.key]) require(path.join(ROOT, 'js/data', e.key + '.js'));
+    const bank = P.DATA[e.key];
+    assert.strictEqual(bank.length, 100, e.key);
+    bank.forEach((q, i) => {
+      assert.strictEqual(q.id, e.key + '-' + String(i + 1).padStart(3, '0'));
+      assert(!seen.has(q.id)); seen.add(q.id);
+      assert.strictEqual(q.opciones.length, 4);
+      assert(q.opciones.every(o => typeof o === 'string' && o.trim().length > 0), q.id);
+      assert(q.pregunta.trim().length > 5, q.id);
+      assert(q.correcta >= 0 && q.correcta <= 3);
+    });
+    assert(P.CONFIG.catByKey[e.key], 'catByKey incluye ' + e.key);
+  });
+});
+test('la especialidad activa es la 3ª categoría visible; las demás siguen siendo válidas para el progreso guardado', () => {
+  const { P } = load();
+  assert.deepStrictEqual(P.CONFIG.catKeys, ['cultura', 'deberes', 'oficinista']);
+  assert.strictEqual(P.CONFIG.catByKey.sanidad.oculta, true);
+});
+
 console.log('\n▶ Repetición espaciada');
 test('acierto independiente: intervalos 1 → 3 → 7 días y dominio a la 3ª revisión', () => {
   const { P } = load(); const E = P.Engine, st = () => P.Store.get();

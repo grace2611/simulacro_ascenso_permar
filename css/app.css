@@ -335,3 +335,40 @@ table.data th { font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppe
 /* formas de los gráficos fuera de .chart (iconos de leyenda y tarjetas) */
 circle.c1, rect.c1, polygon.c1 { fill: var(--cat1); } circle.c2, rect.c2, polygon.c2 { fill: var(--cat2); } circle.c3, rect.c3, polygon.c3 { fill: var(--cat3); }
 .chart-legend svg .pass-line { stroke: var(--success-color); stroke-dasharray: 5 4; stroke-width: 1.5; }
+
+/* ---------- especialidad: tarjeta del menú, selector y enlace ---------- */
+.card-esp { position: relative; }
+.card-esp .card-link { color: inherit; text-decoration: none; }
+.card-esp .card-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }   /* toda la tarjeta es clicable */
+.card-esp .card-link:focus-visible { outline: none; }
+.card-esp .card-link:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 2px; }
+.card-esp .esp-change { position: relative; z-index: 1; min-height: 38px; margin-top: 10px; padding: 0 16px; font-size: 0.82rem; }
+@media (max-width: 520px) {
+  .card-esp { flex-wrap: wrap; }
+  .card-esp .cstat, .card-esp .esp-change { flex: 1 1 100%; }
+  .card-esp .esp-change { margin-top: 4px; }
+}
+
+.linkbtn { display: inline-flex; align-items: center; min-height: 40px; padding: 0 8px; font: inherit; font-weight: 700; color: var(--primary-color); background: none; border: 0; border-radius: 6px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.linkbtn:hover { color: var(--primary-dark, var(--primary-color)); }
+.esp-hint { margin-top: 2px; }
+
+.esp-list { display: grid; gap: 8px; margin-top: 10px; }
+.esp-opt {
+  display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 14px; text-align: left; font: inherit; cursor: pointer;
+  color: var(--text-primary); background: var(--pg-glass-strong); border: 1px solid var(--pg-line); border-radius: 14px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.esp-opt:hover { transform: translateY(-1px); border-color: rgba(37, 99, 235, 0.45); }
+.esp-opt .esp-ic { flex: 0 0 40px; width: 40px; height: 40px; display: grid; place-items: center; font-size: 1.3rem; background: var(--pg-chip); border-radius: 12px; }
+.esp-opt .esp-tx { display: grid; gap: 1px; min-width: 0; }
+.esp-opt .esp-tx strong { font-size: 0.97rem; font-weight: 750; }
+.esp-opt .esp-tx small { font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); }
+.esp-opt .esp-ck { display: none; margin-left: auto; font-weight: 800; }
+.esp-opt.on { color: #fff; background: var(--pg-grad); border-color: transparent; }
+.esp-opt.on .esp-ic { background: rgba(255, 255, 255, 0.2); }
+.esp-opt.on .esp-tx small { color: rgba(255, 255, 255, 0.88); }
+.esp-opt.on .esp-ck { display: block; }
+.esp-opt:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (min-width: 560px) { .esp-list { grid-template-columns: 1fr 1fr; } }
+dialog.modal:has(.esp-list) { width: min(620px, calc(100vw - 28px)); }

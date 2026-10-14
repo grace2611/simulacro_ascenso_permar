@@ -129,6 +129,56 @@
       });
     },
 
+    /* ---------- especialidad ---------- */
+    espActual: function () { return P.ESP ? P.ESP.porClave[P.ESP.activa] : { key: "oficinista", nombre: "Oficinista", icono: "🗂️" }; },
+
+    // Línea breve "Tu especialidad: X · Cambiar" para las pantallas de configuración.
+    espHint: function () {
+      var e = UI.espActual();
+      return '<p class="hint esp-hint">🧰 Tu especialidad: <strong>' + U.esc(e.nombre) + '</strong> · ' +
+        '<button type="button" class="linkbtn" data-esp-change>Cambiar especialidad</button></p>';
+    },
+
+    // Diálogo para elegir la especialidad. Al elegir otra se guarda y la página se recarga con su banco.
+    pickSpecialty: function () {
+      if (!P.ESP) return;
+      var state = Store.get(), act = P.ESP.activa;
+      var estudiadas = {};
+      Object.keys(state.q).forEach(function (id) { var c = state.q[id].cat; estudiadas[c] = (estudiadas[c] || 0) + 1; });
+      var items = P.ESP.lista.map(function (e) {
+        var n = estudiadas[e.key] || 0, on = e.key === act;
+        return '<button type="button" class="esp-opt' + (on ? " on" : "") + '" role="radio" aria-checked="' + on + '" data-k="' + e.key + '"' + (on ? " data-focus" : "") + ">" +
+          '<span class="esp-ic" aria-hidden="true">' + e.icono + "</span>" +
+          '<span class="esp-tx"><strong>' + U.esc(e.nombre) + "</strong><small>" +
+          (on ? "Seleccionada" : "") + (on && n ? " · " : "") + (n ? n + " " + U.plural(n, "estudiada", "estudiadas") : (on ? "" : "Sin empezar")) + "</small></span>" +
+          '<span class="esp-ck" aria-hidden="true">✓</span></button>';
+      }).join("");
+      return UI.dialog({
+        title: "🧰 Elige tu especialidad",
+        html: '<p class="hint">Las preguntas de <strong>Especialidad</strong> cambian según la que elijas. ' +
+              "Tu progreso en cada una se guarda por separado, así que puedes volver cuando quieras.</p>" +
+              '<div class="esp-list" role="radiogroup" aria-label="Especialidad">' + items + "</div>",
+        dismissValue: "close",
+        actions: [{ label: "Cerrar", value: "close", cls: "btn-secondary" }],
+        onOpen: function (d) {
+          d.addEventListener("click", function (ev) {
+            var b = ev.target.closest && ev.target.closest(".esp-opt");
+            if (!b) return;
+            ev.preventDefault();
+            var k = b.getAttribute("data-k");
+            if (k === act) { d.close(); d.remove(); return; }
+            if (!P.ESP.guardar(k)) {
+              UI.toast("⚠️ Este navegador no permite guardar tu elección: se usará solo mientras no cierres la página.", "warn");
+              return;
+            }
+            try { root.sessionStorage.setItem("permar_esp_cambio", P.ESP.porClave[k].nombre); } catch (e) { /* nada */ }
+            d.close(); d.remove();
+            root.location.reload();
+          });
+        }
+      });
+    },
+
     confirmReset: function () {
       var html =
         "<p>Se eliminarán <strong>de este navegador</strong>:</p><ul class='plain'>" +
@@ -177,7 +227,17 @@
 
   P.UI = UI;
   if (doc) {
-    var start = function () { UI.applyMotion(); UI.warnStorage(); };
+    var start = function () {
+      UI.applyMotion(); UI.warnStorage();
+      doc.addEventListener("click", function (ev) {
+        var b = ev.target.closest && ev.target.closest("[data-esp-change]");
+        if (b) { ev.preventDefault(); UI.pickSpecialty(); }
+      });
+      try {
+        var nuevo = root.sessionStorage.getItem("permar_esp_cambio");
+        if (nuevo) { root.sessionStorage.removeItem("permar_esp_cambio"); UI.toast("✅ Especialidad: <strong>" + U.esc(nuevo) + "</strong>. ¡Lista para practicar!", "ok"); }
+      } catch (e) { /* nada */ }
+    };
     if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", start); else start();
   }
 })(typeof window !== "undefined" ? window : globalThis);

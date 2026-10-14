@@ -39,7 +39,7 @@
       "<h2>Aprende con tarjetas</h2>" +
       '<p class="hint">Lee la pregunta, intenta recordar la respuesta, revélala y dinos cómo te fue. ' +
       (ov.due > 0 ? "Tienes <strong>" + ov.due + "</strong> repasos pendientes: saldrán primero." : "Saldrán primero tus pendientes, luego las preguntas nuevas.") + "</p>" +
-      '<fieldset class="group"><legend>Categoría</legend><div class="pills">' + cats + "</div></fieldset>" +
+      '<fieldset class="group"><legend>Categoría</legend><div class="pills">' + cats + "</div>" + UI.espHint() + "</fieldset>" +
       '<fieldset class="group"><legend>Cantidad de tarjetas</legend><div class="pills">' +
       pill("n", "10", "10", true) + pill("n", "20", "20", false) + pill("n", "30", "30", false) + "</div></fieldset>" +
       '<p class="hint" id="estimate"></p><button type="button" class="btn btn-primary big" id="goBtn">▶ Empezar</button>';

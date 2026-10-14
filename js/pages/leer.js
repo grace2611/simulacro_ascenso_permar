@@ -82,5 +82,6 @@
   top.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
   window.addEventListener("scroll", function () { top.hidden = window.scrollY < 600; }, { passive: true });
 
+  if (P.UI) $("#espHint").innerHTML = P.UI.espHint();
   renderTabs(); render();
 })();

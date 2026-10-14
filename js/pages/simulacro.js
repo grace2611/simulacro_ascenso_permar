@@ -36,7 +36,7 @@
     setupView.innerHTML =
       "<h2>Configura tu simulacro</h2>" +
       '<p class="hint">Condiciones de examen: sin ayudas, sin explicaciones y con tiempo límite. Verás todo al terminar.</p>' +
-      '<fieldset class="group"><legend>Categoría</legend><div class="pills">' + cats + "</div></fieldset>" +
+      '<fieldset class="group"><legend>Categoría</legend><div class="pills">' + cats + "</div>" + UI.espHint() + "</fieldset>" +
       '<fieldset class="group"><legend>Cantidad de preguntas</legend><div class="pills">' + counts + "</div></fieldset>" +
       '<div class="field inline"><label for="mins">Tiempo disponible (minutos)</label>' +
       '<input id="mins" type="number" inputmode="numeric" min="' + cfg.minMinutes + '" max="' + cfg.maxMinutes + '" step="1" value="' + cfg.defaultCount * cfg.minutesPerQuestion + '"></div>' +

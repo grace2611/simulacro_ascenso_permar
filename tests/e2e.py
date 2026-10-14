@@ -62,8 +62,14 @@ with sync_playwright() as pw:
     page = new_page(ctx, "index.html")
     check("muestra bienvenida (sin estadísticas ficticias)", page.is_visible("#welcome") and not page.is_visible("#today"))
     check("7 modalidades", page.locator("#modes .mode").count() == 7)
-    check("3 categorías conservadas", page.locator("#cats a.card").count() == 3)
-    check("enlaces de categoría correctos", page.get_attribute("#cats a.card >> nth=2", "href") == "quiz.html?categoria=oficinista")
+    check("3 categorías conservadas", page.locator("#cats .card").count() == 3)
+    # selector de especialidad: cambia el banco y se puede volver a la anterior
+    page.click(".esp-change"); page.click('.esp-opt[data-k="sanidad"]'); page.wait_for_selector("#cats .card-esp")
+    check("selector de especialidad: Sanidad activa con su banco", "Sanidad" in page.inner_text(".card-esp") and page.evaluate("PERMAR.DATA.sanidad.length") == 100
+          and page.get_attribute("#cats .card-esp .card-link", "href") == "quiz.html?categoria=sanidad")
+    page.click(".esp-change"); page.click('.esp-opt[data-k="oficinista"]'); page.wait_for_selector("#cats .card-esp")
+    check("selector de especialidad: se puede volver a Oficinista", "Oficinista" in page.inner_text(".card-esp"))
+    check("enlaces de categoría correctos", page.get_attribute("#cats .card-esp .card-link", "href") == "quiz.html?categoria=oficinista")
     page.close()
 
     # ------------------------------------------------------------------ práctica clásica

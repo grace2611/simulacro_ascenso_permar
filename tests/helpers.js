@@ -5,7 +5,7 @@ function mem(){ const m={}; return {getItem:k=>(k in m?m[k]:null), setItem:(k,v)
 function load(){
   Object.keys(require.cache).forEach(k=>{ if(k.startsWith(ROOT)) delete require.cache[k]; });
   globalThis.PERMAR = undefined;
-  ['data/cultura','data/deberes','data/oficinista','core/util','core/config','core/storage','core/srs','core/gamify','core/stats','core/engine']
+  ['data/cultura','data/deberes','data/oficinista','data/especialidades','core/util','core/config','core/storage','core/srs','core/gamify','core/stats','core/engine']
     .forEach(f=>require(path.join(ROOT,'js',f+'.js')));
   const P = globalThis.PERMAR; const be = mem(); P.Store.setBackend(be); P.Stats.resetIndex();
   return {P, be};

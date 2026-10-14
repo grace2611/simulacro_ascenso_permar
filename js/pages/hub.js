@@ -74,6 +74,13 @@
         ? '<div class="cstat">' + UI.bar(c.masteredPct, "Dominio de " + cat.nombre) +
           "<span>" + c.seen + " de " + c.total + " estudiadas · dominio " + c.masteredPct + " %" + (c.due ? " · " + c.due + " pend." : "") + "</span></div>"
         : "";
+      if (cat.especialidad) {
+        var esp = UI.espActual();
+        return '<div class="card card-esp"><span class="card-icon" aria-hidden="true">' + cat.icono + "</span>" +
+          '<div><h2><a class="card-link" href="quiz.html?categoria=' + c.cat + '">ESPECIALIDAD</a></h2>' +
+          '<p><span aria-hidden="true">' + esp.icono + " </span>" + esc(esp.nombre) + " · " + c.total + " preguntas</p></div>" + info +
+          '<button type="button" class="btn btn-secondary esp-change" data-esp-change>🔄 Cambiar especialidad</button></div>';
+      }
       return '<a class="card" href="quiz.html?categoria=' + c.cat + '"><span class="card-icon" aria-hidden="true">' + cat.icono + "</span>" +
         "<div><h2>" + esc(cat.nombre.toUpperCase()) + "</h2><p>" + c.total + " preguntas</p></div>" + info + "</a>";
     }).join("");

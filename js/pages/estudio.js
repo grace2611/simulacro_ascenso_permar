@@ -82,7 +82,7 @@
     setupView.innerHTML =
       "<h2>¿Qué quieres repasar?</h2>" +
       '<p class="hint">Una pregunta se considera <strong>dominada</strong> tras ' + C.srs.masteryStreak + " aciertos independientes en días distintos, sin ayuda. Si la vuelves a fallar, regresa a la lista.</p>" +
-      '<fieldset class="group"><legend>Filtro</legend><div class="pills">' + opts.join("") + "</div></fieldset>" +
+      '<fieldset class="group"><legend>Filtro</legend><div class="pills">' + opts.join("") + "</div>" + UI.espHint() + "</fieldset>" +
       '<fieldset class="group"><legend>Cantidad</legend><div class="pills">' +
       pill("cant", "10", "10", true) + pill("cant", "20", "20", false) + pill("cant", "0", "Todas", false) + "</div></fieldset>" +
       '<p class="hint" id="estimate"></p><button type="button" class="btn btn-primary big" id="goBtn">▶ Empezar repaso</button>';
@@ -132,7 +132,7 @@
       '<fieldset class="group"><legend>Duración</legend>' +
       '<p class="sub">Por tiempo — termina al acabarse el tiempo (conserva lo respondido)</p><div class="pills">' + timeOpts + "</div>" +
       '<p class="sub">Por número de preguntas — termina al responderlas todas</p><div class="pills">' + cntOpts + "</div></fieldset>" +
-      '<fieldset class="group"><legend>Categorías</legend><div class="pills">' + cats + "</div></fieldset>" +
+      '<fieldset class="group"><legend>Categorías</legend><div class="pills">' + cats + "</div>" + UI.espHint() + "</fieldset>" +
       '<p class="hint">Se priorizan tus repasos pendientes, luego las preguntas que aún no has visto. No se repite ninguna dentro de la sesión.</p>' +
       '<p class="hint" id="estimate"></p><button type="button" class="btn btn-primary big" id="goBtn">▶ Empezar</button>';
     var upd = function () {

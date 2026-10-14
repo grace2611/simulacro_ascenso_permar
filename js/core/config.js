@@ -6,17 +6,28 @@
   "use strict";
   var P = (root.PERMAR = root.PERMAR || {});
 
+  // Especialidades (si no se cargó js/data/especialidades.js, solo existe "oficinista").
+  var ESP = P.ESP || {
+    lista: [{ key: "oficinista", nombre: "Oficinista", icono: "🗂️" }],
+    porClave: { oficinista: { key: "oficinista", nombre: "Oficinista", icono: "🗂️" } },
+    activa: "oficinista", storageKey: "permar_especialidad", porDefecto: "oficinista",
+    guardar: function () { return false; }
+  };
+  var ESPACT = ESP.porClave[ESP.activa];
+
   P.CONFIG = {
     version: 2,
     storageKey: "permar_v2",          // estado nuevo (v2)
     legacyHistoryKey: "historial",    // historial anterior: se importa, NO se borra
     themeKey: "simulacro_theme",
 
-    /* ---------- categorías (la clave "oficinista" se conserva por compatibilidad) ---------- */
+    /* ---------- categorías ----------
+       La tercera categoría es la ESPECIALIDAD activa (ver js/data/especialidades.js): su clave es la de la
+       especialidad elegida ("oficinista", "sanidad"…), así cada especialidad guarda su progreso por separado. */
     categories: [
       { key: "cultura",    nombre: "Cultura General", corto: "Cultura",      icono: "📚" },
       { key: "deberes",    nombre: "Deberes",         corto: "Deberes",      icono: "⚓" },
-      { key: "oficinista", nombre: "Especialidad",    corto: "Especialidad", icono: "🧰" }
+      { key: ESP.activa,   nombre: "Especialidad · " + ESPACT.nombre, corto: ESPACT.nombre, icono: "🧰", especialidad: true }
     ],
 
     /* ---------- práctica clásica por fases ---------- */
@@ -107,7 +118,12 @@
   };
 
   P.CONFIG.catKeys = P.CONFIG.categories.map(function (c) { return c.key; });
+  // catByKey incluye también las especialidades NO activas: así su progreso guardado sigue siendo válido
+  // (no se descarta al cargar) aunque no aparezcan en pantalla mientras no estén elegidas.
   P.CONFIG.catByKey = {};
+  ESP.lista.forEach(function (e) {
+    P.CONFIG.catByKey[e.key] = { key: e.key, nombre: "Especialidad · " + e.nombre, corto: e.nombre, icono: "🧰", especialidad: true, oculta: true };
+  });
   P.CONFIG.categories.forEach(function (c) { P.CONFIG.catByKey[c.key] = c; });
 
   if (typeof module !== "undefined" && module.exports) module.exports = P.CONFIG;
