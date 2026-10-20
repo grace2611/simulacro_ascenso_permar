@@ -1,0 +1,275 @@
+rules_version = '2';
+/*
+  REGLAS DE SEGURIDAD · Simulacro Ascenso PERMAR  (Cloud Firestore)
+  Despliegue:  firebase deploy --only firestore:rules   (o pégalas en Consola → Firestore → Reglas → Publicar)
+
+  Principios:
+   · Todo lo no listado aquí está DENEGADO.
+   · Visitantes (sin sesión): SOLO leen el banco de preguntas (bank/*), la configuración pública y pueden SUMAR +1 a un contador
+     anónimo de visitas (analytics/*). No pueden leer ni escribir nada más.
+   · Acceso interactivo (guardar progreso, recomendaciones, dispositivos) = prueba gratuita vigente O suscripción vigente.
+   · La prueba de 48 h la fija el SERVIDOR: trials/{uid}.startedAt == request.time, solo se puede CREAR (jamás editar ni borrar),
+     así que no se reinicia con otro navegador, otro dispositivo, borrar datos ni cerrar sesión.
+   · Plan único: PERMAR Premium — 90 días — S/ 5.00. Precio y duración están AQUÍ, no en el navegador.
+   · Nadie puede darse a sí mismo suscripción, rol de administrador ni cambiar fechas. La administradora es quien tenga
+     un documento  admins/{su uid}  creado a mano en la consola (los clientes no pueden crearlo).
+   · Los correos los envía Cloud Functions (Admin SDK) y su estado queda en mailLog/* (solo lectura para la administradora).
+*/
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* ---------------- identidad ---------------- */
+    function signedIn() { return request.auth != null; }
+    function isGoogle() { return signedIn() && request.auth.token.firebase.sign_in_provider == 'google.com'; }
+    function isAdmin() {
+      return isGoogle() && request.auth.token.email_verified == true
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function owner(uid) { return signedIn() && request.auth.uid == uid; }
+
+    /* ---------------- plan único (fuente de verdad del precio y la duración) ---------------- */
+    function planId() { return 'premium90'; }
+    function planDays() { return 90; }
+    function planPrice() { return 5; }
+    function trialHours() { return 48; }
+
+    /* ---------------- acceso: suscripción o prueba ---------------- */
+    function subPath(uid) { return /databases/$(database)/documents/subscriptions/$(uid); }
+    function trialPath(uid) { return /databases/$(database)/documents/trials/$(uid); }
+    function isSuspended() {
+      return exists(subPath(request.auth.uid)) && get(subPath(request.auth.uid)).data.status == 'suspended';
+    }
+    function isPremium() {
+      return isGoogle() && exists(subPath(request.auth.uid))
+        && get(subPath(request.auth.uid)).data.status == 'active'
+        && get(subPath(request.auth.uid)).data.expiresAt > request.time;
+    }
+    function hasTrial() {
+      return isGoogle() && exists(trialPath(request.auth.uid))
+        && get(trialPath(request.auth.uid)).data.startedAt + duration.value(trialHours(), 'h') > request.time
+        && !isSuspended();
+    }
+    function hasAccess() { return isPremium() || hasTrial(); }
+
+    /* =========================================================
+       Configuración pública: titular, contacto, horas de revisión. La lee cualquiera; la edita solo la administradora.
+       ========================================================= */
+    match /config/public {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    /* Administradoras: un cliente puede saber si ÉL lo es, nunca crearlo ni cambiarlo. */
+    match /admins/{uid} {
+      allow read: if owner(uid) || isAdmin();
+      allow write: if false;
+    }
+
+    /* =========================================================
+       Banco de preguntas: LECTURA PÚBLICA (sección «Leer preguntas y respuestas»). Solo la administradora escribe.
+       Ojo: leer el banco NO da XP, progreso ni acceso a nada interactivo (eso lo controlan hasAccess() y las rutas de abajo).
+       ========================================================= */
+    match /bank/{cat} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    /* =========================================================
+       Perfil básico (solo cuentas de Google)
+       ========================================================= */
+    match /users/{uid} {
+      allow read: if owner(uid) || isAdmin();
+      allow create: if isGoogle() && owner(uid)
+        && request.resource.data.keys().hasOnly(['displayName', 'email', 'photoURL', 'createdAt', 'lastLoginAt'])
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.lastLoginAt == request.time;
+      allow update: if isGoogle() && owner(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName', 'email', 'photoURL', 'lastLoginAt'])
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.lastLoginAt == request.time;
+      allow delete: if false;
+
+      /* Progreso en la nube. Solo el dueño y solo con prueba o suscripción vigente. */
+      match /progress/{part} {
+        allow read: if owner(uid) && hasAccess();
+        allow create, update: if owner(uid) && hasAccess()
+          && request.resource.data.updatedAt == request.time
+          && request.resource.data.rev is int
+          && (part == 'meta'
+                ? request.resource.data.keys().hasOnly(['rev', 'by', 'updatedAt']) && request.resource.data.by is string
+                : part.matches('^(core|daily|attempts|sessions|exams|q_[a-z]+)$')
+                  && request.resource.data.keys().hasOnly(['json', 'rev', 'updatedAt'])
+                  && request.resource.data.json is string && request.resource.data.json.size() < 900000);
+        // Borrar el progreso propio se permite aunque haya vencido el acceso (derecho a eliminar sus datos).
+        allow delete: if owner(uid);
+      }
+
+      /* Dispositivos activos (control de cuentas compartidas) */
+      match /devices/{deviceId} {
+        allow read: if owner(uid) && hasAccess();
+        allow create: if owner(uid) && hasAccess()
+          && request.resource.data.keys().hasOnly(['label', 'createdAt', 'lastSeen'])
+          && request.resource.data.lastSeen == request.time;
+        allow update: if owner(uid) && hasAccess()
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['lastSeen', 'label'])
+          && request.resource.data.lastSeen == request.time;
+        allow delete: if owner(uid);
+      }
+    }
+
+    /* =========================================================
+       Prueba gratuita de 48 h: UNA por cuenta, con hora del servidor. Solo create (nunca update ni delete).
+       ========================================================= */
+    match /trials/{uid} {
+      allow read: if owner(uid) || isAdmin();
+      allow create: if isGoogle() && owner(uid)
+        && request.resource.data.keys().hasOnly(['startedAt', 'email'])
+        && request.resource.data.startedAt == request.time
+        && request.resource.data.email == request.auth.token.email;
+      allow update, delete: if false;
+    }
+
+    /* =========================================================
+       Suscripción: la lee el dueño; SOLO la administradora la escribe
+       ========================================================= */
+    match /subscriptions/{uid} {
+      allow read: if owner(uid) || isAdmin();
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly(['status', 'planId', 'startsAt', 'expiresAt', 'updatedAt', 'updatedBy', 'lastPaymentId', 'reason'])
+        && request.resource.data.status in ['active', 'expired', 'rejected', 'suspended']
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.updatedBy == request.auth.uid
+        && (request.resource.data.status != 'active'
+            || (request.resource.data.expiresAt > request.time
+                && request.resource.data.expiresAt <= request.time + duration.value(800, 'd')));
+      allow delete: if false;
+    }
+
+    /* =========================================================
+       Pagos manuales (Yape / Plin). Una solicitud abierta por usuario: el id del documento es el uid.
+       Enviar una solicitud NO activa nada: solo la administradora escribe subscriptions/*.
+       ========================================================= */
+    function reqPath(uid) { return /databases/$(database)/documents/paymentRequests/$(uid); }
+    function validRequest() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['uid', 'email', 'displayName', 'planId', 'planName', 'days', 'amount', 'currency',
+                               'method', 'operationCode', 'payerName', 'note', 'hasReceipt', 'confirmed', 'status', 'createdAt'])
+        && d.keys().hasAll(['uid', 'email', 'planId', 'planName', 'days', 'amount', 'currency', 'method',
+                            'operationCode', 'payerName', 'hasReceipt', 'confirmed', 'status', 'createdAt'])
+        && d.uid == request.auth.uid
+        && d.email == request.auth.token.email
+        && d.status == 'pending'
+        && d.createdAt == request.time
+        && d.planId == planId() && d.days == planDays() && d.amount == planPrice() && d.currency == 'PEN'
+        && d.method in ['yape', 'plin']
+        && d.operationCode is string && d.operationCode.matches('^[A-Za-z0-9-]{4,20}$')
+        && d.payerName is string && d.payerName.size() >= 3 && d.payerName.size() <= 80
+        && d.get('note', '').size() <= 300
+        && d.confirmed == true
+        && d.hasReceipt == true
+        && existsAfter(/databases/$(database)/documents/receipts/$(request.auth.uid));   // comprobante OBLIGATORIO
+    }
+    match /paymentRequests/{uid} {
+      allow read: if owner(uid) || isAdmin();
+      allow create: if isGoogle() && owner(uid) && validRequest();
+      allow update: if false;
+      allow delete: if owner(uid) || isAdmin();     // el estudiante puede cancelar la suya; la administradora la cierra al resolver
+    }
+
+    // Comprobante (imagen reducida). Privado: solo el dueño y la administradora.
+    match /receipts/{uid} {
+      allow read: if owner(uid) || isAdmin();
+      allow create, update: if isGoogle() && owner(uid)
+        && request.resource.data.keys().hasOnly(['image', 'mime', 'size', 'createdAt'])
+        && request.resource.data.image is string && request.resource.data.image.size() <= 350000
+        && request.resource.data.image.matches('^data:image/jpeg;base64,.*')
+        && request.resource.data.mime == 'image/jpeg'
+        && request.resource.data.createdAt == request.time
+        && existsAfter(reqPath(uid));
+      allow delete: if owner(uid) || isAdmin();
+    }
+
+    // Copia de cada comprobante ya resuelto (auditoría). Solo la administradora la lee y la crea; nadie la edita ni la borra.
+    match /receiptsArchive/{id} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && request.resource.data.image is string && request.resource.data.image.size() <= 350000;
+      allow update, delete: if false;
+    }
+
+    // Historial de solicitudes resueltas (lo escribe solo la administradora; el estudiante ve las suyas).
+    // Aprobar/rechazar EXIGE que la solicitud pendiente exista y se consuma en el mismo lote → no se puede aprobar dos veces.
+    match /paymentHistory/{id} {
+      allow read: if (signedIn() && resource.data.uid == request.auth.uid) || isAdmin();
+      allow create: if isAdmin() && request.resource.data.status in ['approved', 'rejected', 'manual']
+        && request.resource.data.reviewedBy == request.auth.uid && request.resource.data.reviewedAt == request.time
+        && (request.resource.data.status == 'manual'
+            || (exists(reqPath(request.resource.data.uid)) && !existsAfter(reqPath(request.resource.data.uid))));
+      allow update, delete: if false;
+    }
+
+    // Bitácora de auditoría: solo se puede AÑADIR (no editar ni borrar). Solo la administradora la lee.
+    match /adminLog/{id} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && request.resource.data.by == request.auth.uid && request.resource.data.at == request.time;
+      allow update, delete: if false;
+    }
+
+    // Estado de entrega de correos: lo escribe SOLO Cloud Functions (Admin SDK, que omite estas reglas).
+    match /mailLog/{id} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    /* =========================================================
+       Recomendaciones para PERMAR (solo con acceso vigente)
+       ========================================================= */
+    function validRec() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['uid', 'email', 'category', 'title', 'description', 'area', 'status', 'createdAt'])
+        && d.keys().hasAll(['uid', 'email', 'category', 'title', 'description', 'status', 'createdAt'])
+        && d.uid == request.auth.uid && d.email == request.auth.token.email
+        && d.category in ['preguntas_nuevas', 'correccion', 'simulacros', 'tarjetas', 'ux', 'tecnico', 'funciones', 'otro']
+        && d.title is string && d.title.size() >= 4 && d.title.size() <= 120
+        && d.description is string && d.description.size() >= 10 && d.description.size() <= 2000
+        && d.get('area', '').size() <= 80
+        && d.status == 'received' && d.createdAt == request.time;
+    }
+    match /recommendations/{id} {
+      allow read: if (signedIn() && resource.data.uid == request.auth.uid) || isAdmin();
+      allow create: if isGoogle() && hasAccess() && validRec();
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'updatedAt', 'updatedBy'])
+        && request.resource.data.status in ['received', 'review', 'accepted', 'implemented', 'discarded']
+        && request.resource.data.updatedAt == request.time && request.resource.data.updatedBy == request.auth.uid;
+      allow delete: if false;
+    }
+    // Notas PRIVADAS de la administradora e historial de cambios: el estudiante nunca las lee.
+    match /recommendationNotes/{id} {
+      allow read, write: if isAdmin();
+    }
+
+    /* =========================================================
+       Analítica anónima de visitas (sin IP ni datos personales).
+       Cualquiera puede SUMAR +1 a un contador del día; no puede bajarlo, borrarlo ni leerlo. Solo la administradora lee.
+       Son estimaciones: un script malicioso podría inflar el contador, nunca obtener acceso ni datos.
+       ========================================================= */
+    function aOld(k) { return resource == null ? 0 : resource.data.get(k, 0); }
+    function aNew(k) { return request.resource.data.get(k, 0); }
+    function aShape() {
+      return request.resource.data.keys().hasOnly(['visits', 'uniques', 'reads', 'authSessions', 'updatedAt'])
+        && request.resource.data.updatedAt == request.time;
+    }
+    function aStep(k) { return aNew(k) is int && (aNew(k) == aOld(k) || aNew(k) == aOld(k) + 1); }
+    function aOneOnly() {
+      return (aNew('visits') - aOld('visits')) + (aNew('uniques') - aOld('uniques'))
+           + (aNew('reads') - aOld('reads')) + (aNew('authSessions') - aOld('authSessions')) <= 2;
+    }
+    match /analytics/{day} {
+      allow read: if isAdmin();
+      allow create, update: if day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$') && aShape()
+        && aStep('visits') && aStep('uniques') && aStep('reads') && aStep('authSessions') && aOneOnly();
+      allow delete: if false;
+    }
+  }
+}

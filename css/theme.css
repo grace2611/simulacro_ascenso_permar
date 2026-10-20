@@ -1,0 +1,274 @@
+/*
+==========================================
+Estilo compartido · copiado del diseño de FinanceFlow
+- Tipografía Inter
+- Fondo suave con brillos azul/violeta
+- Tarjetas de vidrio (blur) con bordes redondeados
+- Degradado azul → violeta como color de acento
+- Modo claro / oscuro (botón arriba a la derecha)
+==========================================
+*/
+
+:root {
+    --primary-color: #2563EB;
+    --primary-dark: #1E40AF;
+    --primary-light: #DBEAFE;
+
+    --success-color: #16A34A;
+    --success-light: #DCFCE7;
+    --warning-color: #D97706;
+    --warning-light: #FEF3C7;
+    --danger-color: #DC2626;
+    --danger-light: #FEE2E2;
+
+    --background-color: #F8FAFC;
+    --surface-color: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --border-color: #E2E8F0;
+
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.10);
+    --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.12);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --pg-glass: rgba(255, 255, 255, 0.66);
+    --pg-glass-strong: rgba(255, 255, 255, 0.82);
+    --pg-edge: rgba(255, 255, 255, 0.85);
+    --pg-line: rgba(148, 163, 184, 0.24);
+    --pg-chip: rgba(37, 99, 235, 0.08);
+    --pg-chip-text: #2563EB;
+    --pg-shadow: 0 10px 34px rgba(15, 23, 42, 0.07), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --pg-shadow-hover: 0 18px 44px rgba(37, 99, 235, 0.13), 0 2px 4px rgba(15, 23, 42, 0.05);
+    --pg-a: #2563EB;
+    --pg-b: #7C3AED;
+    --pg-grad: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+    --pg-radius: 22px;
+
+    --glow-a: rgba(37, 99, 235, 0.16);
+    --glow-b: rgba(124, 58, 237, 0.13);
+
+    --font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --background-color: #0A0F1E;
+    --surface-color: #121A2E;
+    --text-primary: #E8ECF6;
+    --text-secondary: #94A3B8;
+    --border-color: rgba(148, 163, 184, 0.16);
+
+    --primary-color: #4F8BFF;
+    --primary-dark: #2F6DF0;
+    --primary-light: rgba(79, 139, 255, 0.16);
+    --success-color: #34D399;
+    --success-light: rgba(52, 211, 153, 0.14);
+    --warning-color: #FBBF24;
+    --warning-light: rgba(251, 191, 36, 0.14);
+    --danger-color: #F87171;
+    --danger-light: rgba(248, 113, 113, 0.14);
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.40);
+    --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+
+    --pg-glass: rgba(20, 30, 52, 0.62);
+    --pg-glass-strong: rgba(24, 36, 62, 0.85);
+    --pg-edge: rgba(148, 163, 255, 0.14);
+    --pg-line: rgba(148, 163, 184, 0.16);
+    --pg-chip: rgba(79, 139, 255, 0.14);
+    --pg-chip-text: #8FB4FF;
+    --pg-shadow: 0 14px 40px rgba(0, 0, 0, 0.32);
+    --pg-shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.45);
+
+    --glow-a: rgba(79, 139, 255, 0.18);
+    --glow-b: rgba(124, 58, 237, 0.16);
+}
+
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    font-family: var(--font-family);
+    color: var(--text-primary);
+    background: var(--background-color);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Brillos de fondo suaves (como el dashboard de FinanceFlow) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(60rem 36rem at 12% -8%, var(--glow-a), transparent 60%),
+        radial-gradient(52rem 34rem at 108% 6%, var(--glow-b), transparent 58%),
+        radial-gradient(50rem 30rem at 50% 118%, var(--glow-a), transparent 62%);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+
+/* ---------- Superficie de vidrio ---------- */
+
+.glass {
+    background: var(--pg-glass);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid var(--pg-edge);
+    border-radius: var(--pg-radius);
+    box-shadow: var(--pg-shadow);
+}
+
+
+/* ---------- Botones ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 22px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+    color: #fff;
+    background: var(--pg-grad);
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.28);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.36);
+}
+
+.btn-secondary {
+    color: var(--pg-chip-text);
+    background: var(--pg-chip);
+    border-color: rgba(37, 99, 235, 0.18);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: var(--pg-grad);
+    border-color: transparent;
+    color: #fff;
+}
+
+.btn-danger {
+    color: var(--danger-color);
+    background: var(--danger-light);
+    border-color: rgba(220, 38, 38, 0.16);
+}
+
+.btn-danger:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: var(--danger-color);
+    color: #fff;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+}
+
+
+/* ---------- Botón modo claro / oscuro ---------- */
+
+.theme-toggle {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    font-size: 1.15rem;
+    line-height: 1;
+    color: var(--text-primary);
+    background: var(--pg-glass-strong);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--pg-edge);
+    border-radius: 50%;
+    box-shadow: var(--pg-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px) rotate(8deg);
+    box-shadow: var(--pg-shadow-hover);
+}
+
+
+/* ---------- Etiqueta (chip) ---------- */
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pg-chip-text);
+    background: var(--pg-chip);
+}
+
+.gradient-text {
+    background: var(--pg-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes ff-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

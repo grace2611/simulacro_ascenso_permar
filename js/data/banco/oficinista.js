@@ -1,0 +1,1211 @@
+/*
+  Banco COMPLETO de «oficinista» (100 preguntas). Se carga para todas las personas, con o sin sesión.
+  Generado desde banco_privado_NO_SUBIR/bancos.json (herramientas/generar_bancos.js). No cambies los id.
+*/
+(function (root) {
+  "use strict";
+  var P = (root.PERMAR = root.PERMAR || {});
+  P.BANCO = P.BANCO || {};
+  P.BANCO["oficinista"] = [
+ {
+  "id": "oficinista-001",
+  "pregunta": "¿En qué año fue publicada la última edición de la publicación instrucciones sobre correspondencia naval (ISCON-13303)?",
+  "opciones": [
+   "Edición 2010",
+   "Edición 2005",
+   "Edición 2019",
+   "Edición 2012"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Correspondencia Naval."
+ },
+ {
+  "id": "oficinista-002",
+  "pregunta": "Es aquella información, que por razones de seguridad nacional requiere de una protección y tratamiento diferenciado de la información de carácter ordinario o público:",
+  "opciones": [
+   "Información clasificada",
+   "Información pública",
+   "Información externa",
+   "Información interna"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-003",
+  "pregunta": "Es cualquier tipo de documentación financiada por el presupuesto público, que por su contenido es publicada en el Diario Oficial El Peruano y es de acceso a todo el personal y público en general:",
+  "opciones": [
+   "Información ordinaria",
+   "Información interna",
+   "Información externa",
+   "Información pública"
+  ],
+  "correcta": 3,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-004",
+  "pregunta": "Las secretarías de las unidades y dependencias ejercerán control físico de la documentación por medio de:",
+  "opciones": [
+   "Sistema OFITRAME",
+   "Cuaderno de cargo",
+   "Sistema CHASQUI",
+   "Cuaderno Tarjador"
+  ],
+  "correcta": 1,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-005",
+  "pregunta": "Se emplea para disponer acciones de diversa naturaleza con el fin de agilizar la documentación permitiendo anexar documentos:",
+  "opciones": [
+   "Parte de Viaje",
+   "Informe",
+   "Guía de Destino",
+   "Oficio"
+  ],
+  "correcta": 2,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-006",
+  "pregunta": "La documentación clasificada secreta, reservada y confidencial, irá en:",
+  "opciones": [
+   "Doble sobre",
+   "Un solo sobre",
+   "Sin sobre",
+   "Sobres de manila con transparencia"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-007",
+  "pregunta": "Para la documentación formulada en computadora se debe utilizar el tipo de fuente:",
+  "opciones": [
+   "Arial 10",
+   "Century Gothic 11",
+   "Times New Roman 12",
+   "Courier 12"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Formato de documentos."
+ },
+ {
+  "id": "oficinista-008",
+  "pregunta": "Son formatos impresos que tienen espacios para ser llenados con información pertinente; cuyo objetivo es simplificar el trámite administrativo:",
+  "opciones": [
+   "Directivas",
+   "Resoluciones",
+   "Formas de uso oficial",
+   "Actas"
+  ],
+  "correcta": 2,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-009",
+  "pregunta": "Funcionario que ejerce el cargo de Jefe de la Secretaría, personalmente deberá comprobar y certificar, previo cotejo entre el original que exhibe el usuario y la copia presentada:",
+  "opciones": [
+   "Jefe de la Secretaría",
+   "Oficial Cuerpo Jurídico",
+   "Oficial de Seguridad",
+   "Del fedatario"
+  ],
+  "correcta": 3,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-010",
+  "pregunta": "Son aquellos empleados en la Marina de Guerra del Perú, para tratar asuntos que deban ser formulados de acuerdo al procedimiento establecido y que por su naturaleza no sean de carácter normativo ni técnico:",
+  "opciones": [
+   "Documentos técnicos",
+   "Documentos operacionales",
+   "Documentos administrativos",
+   "Documentos jurídicos"
+  ],
+  "correcta": 2,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-011",
+  "pregunta": "Dentro de las características de la redacción, el concepto que indica que en todo documento se expresará en forma concreta las ideas relacionadas directamente con el objetivo, corresponde a:",
+  "opciones": [
+   "Objetividad",
+   "Coherencia",
+   "Acción",
+   "Discusión"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-012",
+  "pregunta": "Es aquella correspondencia que se emite con una periodicidad preestablecida:",
+  "opciones": [
+   "Distribución externa",
+   "Correspondencia interna",
+   "Distribución interna",
+   "Tramitación correspondencia de rutina"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Correspondencia Naval."
+ },
+ {
+  "id": "oficinista-013",
+  "pregunta": "El documento de carácter oficial dirigido a las autoridades extranjeras en general será escrito en idioma:",
+  "opciones": [
+   "Idioma del país a donde va ser dirigido",
+   "Idioma español pudiendo agregarse una traducción si fuera solicitada",
+   "Idioma de origen solamente",
+   "Idioma español sin traducción"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Correspondencia Naval."
+ },
+ {
+  "id": "oficinista-014",
+  "pregunta": "Por su tipo de confección, son aquellos documentos escritos a mano con las formalidades respectivas, de acuerdo a la circunstancia y que constituyen documentaciones oficiales:",
+  "opciones": [
+   "Manuscrita",
+   "Mecanografía",
+   "Digitalizada",
+   "Por computadora personal"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Clasificación documental."
+ },
+ {
+  "id": "oficinista-015",
+  "pregunta": "Las instrucciones correspondientes a los mensajes navales están establecidas en el:",
+  "opciones": [
+   "CAFUSO-13305",
+   "RESENA-13408",
+   "ISCON-13303",
+   "COMU-1602"
+  ],
+  "correcta": 3,
+  "fuente": "COMU-1602 – Comunicaciones navales."
+ },
+ {
+  "id": "oficinista-016",
+  "pregunta": "Es un medio alterno para el registro de los documentos recibidos clasificados y no clasificados en las unidades o dependencias, llevará la numeración correlativa, iniciando numéricamente desde la fecha 1 de enero del año en curso, se denomina:",
+  "opciones": [
+   "Cuaderno de documentos recibidos",
+   "Cuaderno de documentos enviados",
+   "Tarjador de dispositivos legales",
+   "Cuaderno de control de directivas recibidas y promovidas"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-017",
+  "pregunta": "Son los documentos que cursan las autoridades navales y personal naval dentro de la institución.",
+  "opciones": [
+   "Rutina",
+   "Externa",
+   "Interna",
+   "Clasificada"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Correspondencia Naval."
+ },
+ {
+  "id": "oficinista-018",
+  "pregunta": "El tipo de papel para los autógrafos de leyes, decretos legislativos, decretos de urgencia, decretos supremos. El original será papel de tipo bond blanco con un peso máximo de:",
+  "opciones": [
+   "80 gramos",
+   "60 gramos",
+   "120 gramos",
+   "70 gramos"
+  ],
+  "correcta": 2,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-019",
+  "pregunta": "El tipo de papel para las resoluciones de menor jerarquía, las copias serán impresas en papel bond blanco que permita su impresión en el anverso y reverso, con un peso máximo de:",
+  "opciones": [
+   "80 gramos",
+   "120 gramos",
+   "60 gramos",
+   "75 gramos"
+  ],
+  "correcta": 3,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-020",
+  "pregunta": "¿Cuáles son las dimensiones del sello de recepción?",
+  "opciones": [
+   "135 MM. X 45 MM.",
+   "8 MM. X 5 MM.",
+   "50 MM. X 30 MM.",
+   "4 MM. X 3 MM."
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Control documental."
+ },
+ {
+  "id": "oficinista-021",
+  "pregunta": "¿Qué deberán realizar las unidades y dependencias para respaldar la información como medida de seguridad?",
+  "opciones": [
+   "Incinerar",
+   "Depuración",
+   "Backup",
+   "Proteger"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Seguridad de la información."
+ },
+ {
+  "id": "oficinista-022",
+  "pregunta": "Es un compendio mediante el cual la Comandancia General de la Marina hace conocer al personal de la institución las leyes, decretos, resoluciones y otras disposiciones de interés.",
+  "opciones": [
+   "Orden General de la Marina",
+   "Orden del Día",
+   "Orden Interna",
+   "Orden Externa"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa institucional de la Marina."
+ },
+ {
+  "id": "oficinista-023",
+  "pregunta": "La documentación por su alcance puede ser:",
+  "opciones": [
+   "Digitalizada – técnica",
+   "Interna – externa",
+   "Manuscrito – en formato",
+   "Técnico – escrito"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Clasificación documental."
+ },
+ {
+  "id": "oficinista-024",
+  "pregunta": "Es la acción de poner por escrito la idea de un tema relacionado con el servicio o una gestión a título personal:",
+  "opciones": [
+   "Tipificación",
+   "Redacción",
+   "Formulación",
+   "Impresión"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-025",
+  "pregunta": "El sobre conteniendo correspondencia con clasificación de seguridad “confidencial” será abierto en horas laborables por:",
+  "opciones": [
+   "Jefe servicio",
+   "Comandante",
+   "Técnico de cargo",
+   "Oficial Secretario"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Manejo de documentación clasificada."
+ },
+ {
+  "id": "oficinista-026",
+  "pregunta": "El tratamiento, custodia y archivo de la correspondencia de clasificación de seguridad “confidencial”, será igual a lo establecido para la documentación de carácter:",
+  "opciones": [
+   "Secreto",
+   "Reservado",
+   "Ordinario",
+   "Público"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Seguridad documental."
+ },
+ {
+  "id": "oficinista-027",
+  "pregunta": "El trato a usarse cuando el destinatario es de menor antigüedad es:",
+  "opciones": [
+   "Informo",
+   "Solicito",
+   "Recomiendo",
+   "Comunico"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-028",
+  "pregunta": "Todo documento deberá ser dirigido al…………..:",
+  "opciones": [
+   "Oficial más antiguo",
+   "A la persona",
+   "Cargo",
+   "Comandante"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-029",
+  "pregunta": "¿Quién es el responsable de disponer que personal subalterno tome conocimiento de la correspondencia con clasificación de seguridad “confidencial”?",
+  "opciones": [
+   "Técnico de cargo",
+   "Oficial Secretario",
+   "Comandante",
+   "Jefe servicio"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Seguridad documental."
+ },
+ {
+  "id": "oficinista-030",
+  "pregunta": "El trato a usarse cuando el destinatario es de mayor antigüedad es:",
+  "opciones": [
+   "Comunico",
+   "Sírvase",
+   "Solicito",
+   "Agradeceré"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-031",
+  "pregunta": "La correspondencia interna y externa a qué categorización de documentos comprende:",
+  "opciones": [
+   "Por su empleo",
+   "Por su carácter",
+   "Por su alcance",
+   "Por su confección"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Clasificación documental."
+ },
+ {
+  "id": "oficinista-032",
+  "pregunta": "Los documentos administrativos a qué categorización de documentos comprende:",
+  "opciones": [
+   "Por su carácter",
+   "Por su empleo",
+   "Por su alcance",
+   "Por su medio de remisión"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Clasificación documental."
+ },
+ {
+  "id": "oficinista-033",
+  "pregunta": "¿Cuáles son las dimensiones del papel del tamaño A4 a emplearse en los documentos diversos?",
+  "opciones": [
+   "220 por 297 MM",
+   "290 por 210 MM",
+   "210 por 220 MM",
+   "210 por 297 MM"
+  ],
+  "correcta": 3,
+  "fuente": "Normas técnicas de documentación."
+ },
+ {
+  "id": "oficinista-034",
+  "pregunta": "Son documentos que permiten su manipulación en medios magnéticos y de transmisión de datos:",
+  "opciones": [
+   "Backup",
+   "Formas",
+   "Digitalizada",
+   "Manuscrita"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Clasificación documental."
+ },
+ {
+  "id": "oficinista-035",
+  "pregunta": "Se considera documentación…………………., A aquella que no contiene información clasificada y es de uso exclusivo de la institución:",
+  "opciones": [
+   "Pública",
+   "Reservada",
+   "Ordinario",
+   "Clasificada"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Clasificación documental."
+ },
+ {
+  "id": "oficinista-036",
+  "pregunta": "El………………….. De los diferentes legajos o archivadores tiene por finalidad permitir una rápida ubicación de la documentación que contiene:",
+  "opciones": [
+   "Archivador",
+   "Rotulado",
+   "Fólder",
+   "Cuaderno registro"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Archivo documental."
+ },
+ {
+  "id": "oficinista-037",
+  "pregunta": "Para su debido control, los legajos de archivo de la documentación clasificada del nivel secreto, confidencial y reservado, deberán contar con una:",
+  "opciones": [
+   "Registro",
+   "Separador",
+   "Página de inventario",
+   "Código"
+  ],
+  "correcta": 2,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-038",
+  "pregunta": "El archivo de la documentación recibida y enviada, debe efectuarse en forma:",
+  "opciones": [
+   "Abierta",
+   "Junta",
+   "Cubierta",
+   "Separada"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Archivo documental."
+ },
+ {
+  "id": "oficinista-039",
+  "pregunta": "El sistema de archivo empleado para la documentación está basado en la codificación de las:",
+  "opciones": [
+   "Materias y asuntos",
+   "Temas y códigos",
+   "Archivo y legajos",
+   "Carpetas y archivo"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Archivo documental."
+ },
+ {
+  "id": "oficinista-040",
+  "pregunta": "¿Qué medio de remisión es cuando se utiliza el sistema de tramitación electrónica (PGP)?",
+  "opciones": [
+   "Backup",
+   "Escrito",
+   "Manual",
+   "Electrónico"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Tramitación documental."
+ },
+ {
+  "id": "oficinista-041",
+  "pregunta": "¿Qué medio de remisión es cuando se emplea las oficinas postales, mesa de partes, carteros oficiales y servicio de correo comercial?",
+  "opciones": [
+   "Manual",
+   "Electrónico",
+   "Físico",
+   "Digitalizado"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Tramitación documental."
+ },
+ {
+  "id": "oficinista-042",
+  "pregunta": "Para la redacción de un documento debe considerarse tácitamente lo siguiente:",
+  "opciones": [
+   "Unidad, integridad y coherencia",
+   "Hechos, desarrollo de idea y acción",
+   "Claridad y acción",
+   "Hechos y coherencia"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-043",
+  "pregunta": "Dentro de la redacción ¿Qué característica corresponde cuando se debe tratar un solo asunto?",
+  "opciones": [
+   "Integridad",
+   "Coherencia",
+   "Unidad",
+   "Objetividad"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-044",
+  "pregunta": "Desarrollo de ideas reducidas a términos claros y precisos de una orden que servirá para determinar el tipo de documento que corresponde:",
+  "opciones": [
+   "Redacción documentos",
+   "Tramitación documentos",
+   "Formulación documentos",
+   "Recepción documentos"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-045",
+  "pregunta": "La documentación se archivará en legajos o archivadores denominados:",
+  "opciones": [
+   "Archivo",
+   "Carpetas",
+   "Legajos",
+   "Cuadernos de registro"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Archivo documental."
+ },
+ {
+  "id": "oficinista-046",
+  "pregunta": "Cuando el comando deba ausentarse temporalmente, para efecto de firma en los documentos, será reemplazado por:",
+  "opciones": [
+   "Por el Oficial de Personal",
+   "Por el Oficial Secretario",
+   "Por el Oficial Fedatario",
+   "Por el oficial que le sigue en antigüedad"
+  ],
+  "correcta": 3,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-047",
+  "pregunta": "¿Qué significa \"TUPA\"?:",
+  "opciones": [
+   "Texto único de procedimientos administrativos",
+   "Texto único ordenado para adquisición",
+   "Texto unificado de procedimientos adquisitivos",
+   "Texto unificado de procedimientos de adquisición"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa administrativa del Estado."
+ },
+ {
+  "id": "oficinista-048",
+  "pregunta": "Es un documento de uso interno entre los comandos de las unidades y dependencias para tratar asuntos de índole institucional:",
+  "opciones": [
+   "Memorándum",
+   "Informe",
+   "Oficio",
+   "Solicitud"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-049",
+  "pregunta": "En redacción de documentos el asunto o materia de que se trata o que motiva la causa de redactar el documento relativo con el objetivo del tema, corresponde a:",
+  "opciones": [
+   "Desarrollo de idea",
+   "Acción",
+   "Toma de decisión",
+   "Hechos"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-050",
+  "pregunta": "En la redacción de documentos, es la exposición y análisis sobre el asunto tratado:",
+  "opciones": [
+   "Acción",
+   "Desarrollo de idea",
+   "Conocimiento",
+   "Hechos"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-051",
+  "pregunta": "Toda documentación que contiene información relacionada con el ámbito de inteligencia y contrainteligencia ¿A qué clasificación de seguridad corresponde?",
+  "opciones": [
+   "Secreto",
+   "Confidencial",
+   "B secreto",
+   "A secreto"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Clasificación de seguridad."
+ },
+ {
+  "id": "oficinista-052",
+  "pregunta": "Toda documentación que contiene información relacionada con el ámbito militar referente a planeamiento de la defensa nacional, tanto frente interno como externo ¿A qué clasificación de seguridad corresponde?",
+  "opciones": [
+   "Secreto",
+   "Confidencial",
+   "B secreto",
+   "A secreto"
+  ],
+  "correcta": 2,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-053",
+  "pregunta": "El trato a usarse en la redacción de la documentación deberá ser siempre de:",
+  "opciones": [
+   "De acuerdo mutuo",
+   "Mutuo respeto jerárquico",
+   "Por antigüedad",
+   "Por orden"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-054",
+  "pregunta": "Son características o partes, que por su similar diseño y enunciado se emplearán indistintamente para la redacción de documentos administrativos como oficios, cartas, etc., Corresponde a:",
+  "opciones": [
+   "Clasificación",
+   "Características comunes",
+   "Codificación",
+   "Formulación"
+  ],
+  "correcta": 1,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-055",
+  "pregunta": "Es un documento mediante el cual comando de la unidad o dependencia expone a su superior jerárquico los aspectos relevantes durante su periodo de gestión:",
+  "opciones": [
+   "Oficio",
+   "Guía de Destino",
+   "Directiva",
+   "Memoria de gestión anual"
+  ],
+  "correcta": 3,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-056",
+  "pregunta": "Las partes comunes de un oficio son:",
+  "opciones": [
+   "Encabezamiento, cuerpo, párrafo, firma y distribución",
+   "Encabezamiento, texto, antefirma y firma, y distribución",
+   "Encabezamiento, antefirma y firma",
+   "Encabezamiento, texto y distribución"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-057",
+  "pregunta": "Al formular todo tipo de documento, el oficial promotor de la unidad o dependencia, deberá estampar su……………. En la parte inferior izquierda de la copia:",
+  "opciones": [
+   "Sello y antefirma",
+   "Sello y visación",
+   "Antefirma",
+   "Firma"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Procedimientos documentales."
+ },
+ {
+  "id": "oficinista-058",
+  "pregunta": "Los párrafos del texto serán escritos en forma:",
+  "opciones": [
+   "Alineada",
+   "Centrada",
+   "Desviada",
+   "Justificada"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-059",
+  "pregunta": "Para la documentación formulada en computadora ¿Qué tipo de fuente se usará?",
+  "opciones": [
+   "Arial",
+   "Calibri",
+   "Century Gothic",
+   "Century"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Formato de documentos."
+ },
+ {
+  "id": "oficinista-060",
+  "pregunta": "Para la documentación formulada en computadora ¿Qué tamaño de fuente se usará?",
+  "opciones": [
+   "10",
+   "12",
+   "9",
+   "11"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Formato de documentos."
+ },
+ {
+  "id": "oficinista-061",
+  "pregunta": "Para la documentación formulada en computadora ¿Qué estilo de fuente se usará?",
+  "opciones": [
+   "Normal",
+   "Cursiva",
+   "Negrita",
+   "Negrita cursiva"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Formato de documentos."
+ },
+ {
+  "id": "oficinista-062",
+  "pregunta": "Está ubicado debajo del membrete centrado, entre comillas y en letra mayúscula, Century Gothic tamaño 9, ¿a qué descripción corresponde?",
+  "opciones": [
+   "Membrete",
+   "Lugar y Fecha",
+   "Nombre del decenio y año",
+   "Archivo"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Formato de documentos."
+ },
+ {
+  "id": "oficinista-063",
+  "pregunta": "Es un documento de uso oficial empleado únicamente para la comunicación escrita interna entre el comando y sus órganos de línea o viceversa de la unidad o dependencia.",
+  "opciones": [
+   "Oficio",
+   "Orden del Día",
+   "Memorándum",
+   "Directiva"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-064",
+  "pregunta": "Es un documento mediante el cual el personal naval, efectúa una gestión a título personal:",
+  "opciones": [
+   "Oficio",
+   "Solicitud",
+   "Memorándum",
+   "Informe"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-065",
+  "pregunta": "Se colocará en el margen izquierdo y a dos (2) espacios simples debajo del renglón de “Lugar y Fecha”:",
+  "opciones": [
+   "Clasificación de seguridad",
+   "Codificación del documento",
+   "Lugar y Fecha",
+   "Nombre del año"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Formato de documentos."
+ },
+ {
+  "id": "oficinista-066",
+  "pregunta": "Es un documento de uso formal en la comunicación oficial externa, entre la Marina de Guerra del Perú con autoridades, instituciones y organismos adscritos a la administración pública, así como a personas naturales o jurídicas:",
+  "opciones": [
+   "Informe",
+   "Memorándum",
+   "Oficio Especial",
+   "Oficio"
+  ],
+  "correcta": 2,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-067",
+  "pregunta": "Es un documento mediante el cual el personal naval, pone en conocimiento al superior jerárquico las ocurrencias de un hecho concreto dentro de la unidad o dependencia:",
+  "opciones": [
+   "Informe",
+   "Memorándum",
+   "Oficio",
+   "Carta"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-068",
+  "pregunta": "En la antefirma y firma de un oficio ¿Qué frase se emplea como despedida?",
+  "opciones": [
+   "Atentamente",
+   "Dios guarde a Ud.",
+   "Cordialmente",
+   "Agradeceré a ud."
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Redacción administrativa."
+ },
+ {
+  "id": "oficinista-069",
+  "pregunta": "Es un documento, cuyo propósito es simplificar el trámite administrativo, utilizado por delegación al secretario de la Comandancia General de la Marina y los jefes de las secretarías del Estado Mayor General de la Marina, Comandancias Generales, Direcciones Generales, e Inspectoría General de la Marina.",
+  "opciones": [
+   "Entrega de Cargo",
+   "Oficio",
+   "Guía de Destino",
+   "Parte de Viaje"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-070",
+  "pregunta": "Es el proceso de la distribución interna de la documentación dentro de la organización de las unidades o dependencias, una de las normas es:",
+  "opciones": [
+   "Acción inmediata",
+   "Procedimiento",
+   "Lugar",
+   "Información"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Tramitación documental."
+ },
+ {
+  "id": "oficinista-071",
+  "pregunta": "¿Cuáles son los tipos de memoria de una computadora?",
+  "opciones": [
+   "Memoria ROM y rum",
+   "Memoria RAM y PC",
+   "Memoria USB y PC",
+   "Memoria ROM y RAM"
+  ],
+  "correcta": 3,
+  "fuente": "Fundamentos de computación."
+ },
+ {
+  "id": "oficinista-072",
+  "pregunta": "¿A qué tipo de dispositivos pertenecen el monitor y la impresora?",
+  "opciones": [
+   "De video",
+   "De impresión",
+   "De salida",
+   "De entrada"
+  ],
+  "correcta": 2,
+  "fuente": "Fundamentos de computación."
+ },
+ {
+  "id": "oficinista-073",
+  "pregunta": "Es un documento con el cual se informa un tema de carácter técnico con hechos obtenidos y verificados por el promotor:",
+  "opciones": [
+   "Directiva",
+   "Informe técnico",
+   "Guía de Destino",
+   "Resoluciones"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-074",
+  "pregunta": "Son decisiones de carácter específico rubricadas por el Presidente de la República y refrendadas por uno o más ministros a cuyo ámbito de competencia correspondan ¿A qué documento normativo corresponde?",
+  "opciones": [
+   "Resolución Suprema",
+   "Resolución Ministerial",
+   "Resolución de la Comandancia General de la Marina",
+   "Resolución Directoral"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa del Estado peruano."
+ },
+ {
+  "id": "oficinista-075",
+  "pregunta": "Es un documento que se emplea para mantener o disponer actividades específicas, cuyo ámbito esta limitado a la ejecución de la actividad dispuesta al interior de una unidad o dependencia y a su desarrollo en el día:",
+  "opciones": [
+   "Orden del Día",
+   "Orden Interna",
+   "Orden Externa",
+   "Guía de Destino"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-076",
+  "pregunta": "A fin de reducir costos y el tiempo requerido para su tramitación, siempre que sea posible, toda documentación ordinaria será tramitada por:",
+  "opciones": [
+   "Oficina postal",
+   "Medios electrónicos",
+   "Mesa de partes",
+   "Cartero"
+  ],
+  "correcta": 1,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-077",
+  "pregunta": "Es un documento mediante la cual el comando de una unidad o dependencia imparte órdenes precisas de naturaleza general al personal bajo su mando:",
+  "opciones": [
+   "Orden del Día",
+   "Orden Externa",
+   "Orden Interna",
+   "Orden de Base"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Documentos administrativos."
+ },
+ {
+  "id": "oficinista-078",
+  "pregunta": "Con el fin de no mostrar ninguna indicación respecto a la naturaleza de su contenido, ¿la documentación clasificada secreta, reservada y confidencial en cuántos sobres irá?",
+  "opciones": [
+   "Un (1) solo sobre",
+   "Sin sobre",
+   "Dos (2) sobres",
+   "Dos (2) sobres sin sello de clasificación de seguridad"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Seguridad documental."
+ },
+ {
+  "id": "oficinista-079",
+  "pregunta": "La tinta a emplearse en la impresión de la documentación será de color:",
+  "opciones": [
+   "Rojo",
+   "Azul",
+   "Blanco",
+   "Negro"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Formato de documentos."
+ },
+ {
+  "id": "oficinista-080",
+  "pregunta": "El tampón para sellos que indican clasificación de seguridad, prioridad, personal e indicador de destinatario será de color:",
+  "opciones": [
+   "Rojo",
+   "Azul",
+   "Blanco",
+   "Negro"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Normas de sellado."
+ },
+ {
+  "id": "oficinista-081",
+  "pregunta": "Es el sello que se estampa al lado izquierdo y en la parte central a la altura de la antefirma del promotor:",
+  "opciones": [
+   "Sello recepción",
+   "Sello de acción",
+   "Sello oficial",
+   "Sello prioridad"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Normas de sellado."
+ },
+ {
+  "id": "oficinista-082",
+  "pregunta": "Cuando se requiera que los documentos lleguen a su destino a la brevedad y la acción sea inmediata ¿Qué tarjetas se emplearán?",
+  "opciones": [
+   "Invitación",
+   "Personal",
+   "Individual",
+   "Prioridad"
+  ],
+  "correcta": 3,
+  "fuente": "ISCON-13303 – Tramitación documental."
+ },
+ {
+  "id": "oficinista-083",
+  "pregunta": "Los documentos muy urgentes, el plazo de respuesta será de:",
+  "opciones": [
+   "Dos (2) días",
+   "Un (1) día",
+   "Tres (3) días útiles",
+   "El mismo día de recibido"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Plazos de atención."
+ },
+ {
+  "id": "oficinista-084",
+  "pregunta": "Los documentos urgentes, el plazo de respuesta será de:",
+  "opciones": [
+   "Seis (6) días",
+   "Siete (7) días útiles",
+   "Tres (3) días",
+   "El mismo día de recibido"
+  ],
+  "correcta": 1,
+  "fuente": "ISCON-13303 – Plazos de atención."
+ },
+ {
+  "id": "oficinista-085",
+  "pregunta": "Los documentos con atención especial, el plazo de respuesta será de:",
+  "opciones": [
+   "Diez (10) días calendario",
+   "Siete (7) días",
+   "Quince (15) días",
+   "El mismo día de recibido"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Plazos de atención."
+ },
+ {
+  "id": "oficinista-086",
+  "pregunta": "Son órganos destinados a la recepción y distribución de la documentación oficial a las unidades y dependencias situadas en el área de su responsabilidad:",
+  "opciones": [
+   "Oficinas postales",
+   "Correo electrónico",
+   "Trámite documentario",
+   "Mesa de partes"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Organización administrativa."
+ },
+ {
+  "id": "oficinista-087",
+  "pregunta": "Para el transporte de la documentación deberá usarse:",
+  "opciones": [
+   "Maleta con llave",
+   "Bolsa de lona",
+   "Maletín de cuero",
+   "Sobres de manila"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Seguridad documental."
+ },
+ {
+  "id": "oficinista-088",
+  "pregunta": "El cuaderno en el cual se registran los documentos enviados se llama:",
+  "opciones": [
+   "Registro de documentos enviados",
+   "Registro de documentos recibidos",
+   "Cuaderno de documentos enviados",
+   "Tarjados de documentos recibidos"
+  ],
+  "correcta": 2,
+  "fuente": "ISCON-13303 – Registro documental."
+ },
+ {
+  "id": "oficinista-089",
+  "pregunta": "Es el funcionario que ejerce el cargo de Jefe de la Secretaría designado por el comando de la unidad o dependencia, quien sin exclusión de sus labores ordinarias, brindará gratuitamente sus servicios al personal de la institución:",
+  "opciones": [
+   "Oficial de Personal",
+   "Oficial de Seguridad",
+   "Oficial de Comunicaciones",
+   "Del fedatario"
+  ],
+  "correcta": 3,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-090",
+  "pregunta": "Será designado en adición a sus funciones como encargado de la tramitación electrónica de documentos (ENTREDOC):",
+  "opciones": [
+   "Jefe de la secretaria",
+   "Oficial de Seguridad",
+   "Oficial de Comunicaciones",
+   "Técnico de cargo de la secretaría"
+  ],
+  "correcta": 0,
+  "fuente": "ISCON-13303 – Tramitación electrónica."
+ },
+ {
+  "id": "oficinista-091",
+  "pregunta": "¿Cuántas clases de escalafón hay para el personal subalterno?",
+  "opciones": [
+   "Una (1)",
+   "Dos (2)",
+   "Tres (3)",
+   "Cuatro (4)"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa de personal naval."
+ },
+ {
+  "id": "oficinista-092",
+  "pregunta": "Víveres procesados de uso inmediato que se entregan al personal de una unidad sólo en casos de emergencia, por cortos periodos de tiempo.",
+  "opciones": [
+   "Ración de combate",
+   "Ración de mar",
+   "Ración de emergencia",
+   "Rancho naval"
+  ],
+  "correcta": 1,
+  "fuente": "Logística naval."
+ },
+ {
+  "id": "oficinista-093",
+  "pregunta": "¿Cuál es el tipo de clasificación que le corresponde al personal de marinería, por el tipo de servicio que presta?",
+  "opciones": [
+   "Personal del servicio militar voluntario",
+   "Personal del servicio militar obligatorio",
+   "Personal del servicio militar y personal reenganchado",
+   "Personal reenganchado de procedencia de la FAP y EP."
+  ],
+  "correcta": 2,
+  "fuente": "Normativa de personal naval."
+ },
+ {
+  "id": "oficinista-094",
+  "pregunta": "¿Cuál es la ley que regula el sistema nacional de presupuesto?",
+  "opciones": [
+   "Ley General N° 28693",
+   "Ley General N° 28563",
+   "Ley General N° 28708",
+   "Ley General N° 28411"
+  ],
+  "correcta": 3,
+  "fuente": "Legislación peruana."
+ },
+ {
+  "id": "oficinista-095",
+  "pregunta": "Principios del sistema nacional de abastecimiento",
+  "opciones": [
+   "Economía, eficacia, eficiencia, oportunidad, predictibilidad, racionabilidad, sostenibilidad ambiental, social, económica y transparencia",
+   "Economía, eficacia, eficiencia, racionabilidad, sostenibilidad ambiental, social, economía y transparencia",
+   "Economía, eficacia, eficiencia, oportunidad, predictibilidad, social, economía y transparencia",
+   "Economía, eficacia, eficiencia, oportunidad, predictibilidad, racionabilidad, sostenibilidad ambiental, social, económica"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa de abastecimiento del Estado."
+ },
+ {
+  "id": "oficinista-096",
+  "pregunta": "¿Qué significan las siglas \"OSCE\"?",
+  "opciones": [
+   "Organismo supervisor de contrato del Estado",
+   "Organismo supervisor de las contrataciones del Estado",
+   "Organismo de seguridad de contrato con el Estado",
+   "Organismo supervisor de las contrataciones estatales"
+  ],
+  "correcta": 1,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-097",
+  "pregunta": "Un pedido de víveres se hace mediante:",
+  "opciones": [
+   "Memorandum",
+   "Forma ML-601",
+   "Oficio",
+   "Forma ML-401"
+  ],
+  "correcta": 2,
+  "fuente": "Logística naval."
+ },
+ {
+  "id": "oficinista-098",
+  "pregunta": "¿Cuánto tiempo de vigencia tiene una directiva?",
+  "opciones": [
+   "Quince (15) meses",
+   "Treinta y seis (36) meses",
+   "Veinticuatro (24) meses",
+   "Doce (12) meses"
+  ],
+  "correcta": 1,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-099",
+  "pregunta": "¿Mediante qué dispositivo legal se nombra al técnico supervisor maestro de la Marina de Guerra del Perú?",
+  "opciones": [
+   "Resolución de la Comandancia General de la Marina",
+   "Resolución Directoral de la Dirección General de Personal de la Marina",
+   "Resolución Ministerial",
+   "Resolución Suprema"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa institucional."
+ },
+ {
+  "id": "oficinista-100",
+  "pregunta": "El tiempo máximo de permanencia en el empleo de Comandante General de la Marina, es de:",
+  "opciones": [
+   "Dos (2) años",
+   "Un (1) año y medio",
+   "Un (1) año",
+   "Dos (2) años y medio"
+  ],
+  "correcta": 0,
+  "fuente": "Normativa institucional."
+ }
+];
+})(typeof window !== "undefined" ? window : globalThis);

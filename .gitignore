@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+*.pyc
+tests/package-lock.json
+# Nunca subir el banco privado ni respaldos
+banco_privado_NO_SUBIR/
+respaldo/
+bancos.json
+*.zip
+.env
+.DS_Store

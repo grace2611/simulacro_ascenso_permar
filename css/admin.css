@@ -1,0 +1,136 @@
+/*
+  PANEL DE ADMINISTRACIÓN · css/admin.css  (solo lo enlaza admin.html; no afecta a ninguna otra página)
+  Estilo coherente con el resto: vidrio + degradado azul/violeta, claro y oscuro con las mismas variables de theme.css.
+*/
+
+/* ---------- cabecera con logo ---------- */
+.adm-head { display: flex; align-items: center; gap: 14px; margin: 4px 0 16px; }
+.adm-logo { flex: 0 0 auto; width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(37, 99, 235, 0.25)); }
+.adm-head h1 { margin: 0; text-align: left; }
+.adm-sub { margin: 2px 0 0; font-size: 0.9rem; color: var(--text-secondary); }
+
+/* ---------- pestañas principales (siempre visibles al bajar) ---------- */
+.adm-tabs {
+  position: sticky; top: calc(58px + env(safe-area-inset-top, 0px)); z-index: 30;
+  display: flex; flex-wrap: nowrap; gap: 6px; margin: 0 0 12px; padding: 6px;
+  overflow-x: auto; scrollbar-width: none;
+  background: var(--pg-glass-strong); border: 1px solid var(--pg-edge); border-radius: 18px; box-shadow: var(--pg-shadow);
+  -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%);
+}
+.adm-tabs::-webkit-scrollbar { display: none; }
+.adm-tab {
+  position: relative; flex: 1 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  min-height: 44px; padding: 8px 14px; font: inherit; font-weight: 700; font-size: 0.92rem; white-space: nowrap;
+  color: var(--text-primary); background: transparent; border: 1px solid transparent; border-radius: 13px; cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.adm-tab:hover { background: var(--pg-chip); }
+.adm-tab:active { transform: scale(0.97); }
+.adm-tab[aria-selected="true"] { color: #fff; background: var(--pg-grad); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28); }
+.adm-tab .ico { font-size: 1.05rem; line-height: 1; }
+.adm-badge {
+  display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 6px; font-size: 0.72rem; font-weight: 800; line-height: 1;
+  color: #fff; background: var(--danger-color); border-radius: 999px;
+}
+.adm-badge.warn { background: var(--warning-color); }
+.adm-badge[hidden] { display: none; }
+.adm-intro { margin: 0 2px 14px; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5; }
+.adm-intro strong { color: var(--text-primary); }
+
+/* ---------- sub-secciones (botones segmentados) ---------- */
+.adm-seg { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+.adm-segbtn {
+  min-height: 40px; padding: 8px 14px; font: inherit; font-weight: 700; font-size: 0.88rem; color: var(--text-primary);
+  background: var(--pg-glass-strong); border: 1px solid var(--pg-line); border-radius: 999px; cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.adm-segbtn:hover { border-color: rgba(37, 99, 235, 0.4); }
+.adm-segbtn[aria-selected="true"] { color: #fff; background: var(--pg-grad); border-color: transparent; }
+
+/* ---------- Inicio ---------- */
+.adm-sec { margin-bottom: 18px; }
+.adm-h { margin: 0 0 10px; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-secondary); }
+.adm-attn { display: grid; gap: 10px; }
+.adm-attn-card {
+  display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 16px; text-align: left; font: inherit; color: var(--text-primary); cursor: pointer;
+  background: var(--warning-light); border: 1px solid var(--warning-color); border-radius: 18px; transition: transform 0.2s, box-shadow 0.2s;
+}
+.adm-attn-card:hover { transform: translateY(-2px); box-shadow: var(--pg-shadow-hover); }
+.adm-attn-card .ai { flex: 0 0 44px; height: 44px; display: grid; place-items: center; font-size: 1.4rem; background: var(--surface-color); border-radius: 14px; }
+.adm-attn-card .at { flex: 1 1 auto; min-width: 0; display: grid; gap: 2px; }
+.adm-attn-card .at small { color: var(--text-secondary); }
+.adm-attn-card .ag { flex: 0 0 auto; font-weight: 800; color: var(--primary-color); white-space: nowrap; }
+.adm-ok { padding: 16px 18px; background: var(--success-light); border: 1px solid var(--success-color); border-radius: 18px; }
+.stat.hot { border-color: var(--warning-color); background: var(--warning-light); }
+.adm-guide { padding: 0; overflow: hidden; }
+.adm-guide summary { cursor: pointer; padding: 16px 20px; font-weight: 800; min-height: 44px; }
+.adm-guide ol { margin: 0; padding: 0 22px 18px 42px; display: grid; gap: 8px; line-height: 1.5; }
+
+/* ---------- Pagos ---------- */
+.adm-more { margin: 0 0 14px; padding: 4px 14px; background: var(--pg-glass-strong); border: 1px solid var(--pg-line); border-radius: 16px; }
+.adm-more summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 700; font-size: 0.92rem; }
+.adm-more .adm-search { margin: 4px 0 10px; align-items: center; }
+.adm-date { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-secondary); }
+.adm-date input { min-height: 44px; border-radius: 10px; padding: 0 8px; }
+.adm-pay { border-left: 5px solid var(--border-color); }
+.adm-pay.st-pending { border-left-color: var(--warning-color); }
+.adm-pay.st-approved { border-left-color: var(--success-color); }
+.adm-pay.st-rejected { border-left-color: var(--danger-color); }
+.adm-who2 { min-width: 0; flex: 1 1 220px; }
+.adm-pill { display: inline-block; padding: 2px 10px; font-size: 0.76rem; font-weight: 800; border-radius: 999px; color: var(--text-secondary); background: var(--pg-chip); vertical-align: middle; }
+.adm-pill.pending, .adm-pill.sending { color: var(--warning-color); background: var(--warning-light); }
+.adm-pill.approved, .adm-pill.sent { color: var(--success-color); background: var(--success-light); }
+.adm-pill.rejected, .adm-pill.error { color: var(--danger-color); background: var(--danger-light); }
+.adm-kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px 14px; margin: 12px 0 0; }
+.adm-kv > div { min-width: 0; padding: 8px 10px; background: var(--pg-chip); border-radius: 12px; }
+.adm-kv dt { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--text-secondary); }
+.adm-kv dd { margin: 2px 0 0; font-weight: 700; overflow-wrap: anywhere; }
+.adm-late { margin: 10px 0 0; font-size: 0.88rem; font-weight: 700; color: var(--danger-color); }
+.adm-reason { margin: 10px 0 0; padding: 8px 12px; border-radius: 12px; background: var(--danger-light); }
+.adm-card .btnrow { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ventana «Revisar pago» */
+.adm-rv > * + * { margin-top: 12px; }
+.adm-rv .adm-kv { margin-top: 8px; }
+.adm-decide { padding: 12px 14px; border: 1px dashed var(--danger-color); border-radius: 14px; background: var(--danger-light); }
+.adm-decide h4 { margin: 0 0 8px; font-size: 0.95rem; }
+.adm-decide .field + .field { margin-top: 8px; }
+.adm-decide .field select { width: 100%; }
+
+/* ventana «Avisar al estudiante» */
+.adm-mail-state { padding: 10px 14px; border-radius: 12px; font-size: 0.9rem; line-height: 1.45; background: var(--pg-chip); }
+.adm-mail-state.ok { background: var(--success-light); color: var(--text-primary); border: 1px solid var(--success-color); }
+.adm-mail-state.bad { background: var(--danger-light); border: 1px solid var(--danger-color); }
+.adm-mail-state.info { background: var(--warning-light); border: 1px solid var(--warning-color); }
+.adm-mail-to { margin: 10px 0 !important; overflow-wrap: anywhere; }
+.modal-body textarea { width: 100%; min-height: 160px; padding: 10px 12px; font: inherit; line-height: 1.45; color: var(--text-primary); background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 10px; resize: vertical; }
+.adm-mail-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
+.adm-mail-actions .btn { flex: 1 1 140px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+
+/* ---------- Correos ---------- */
+.adm-how h2 { margin: 0 0 8px; font-size: 1.05rem; }
+.adm-how ul { display: grid; gap: 8px; line-height: 1.5; font-size: 0.92rem; }
+.adm-mail { border-left: 5px solid var(--border-color); }
+.adm-mail.st-sent { border-left-color: var(--success-color); }
+.adm-mail.st-error { border-left-color: var(--danger-color); }
+.adm-mail.st-sending { border-left-color: var(--warning-color); }
+
+/* ---------- Ajustes ---------- */
+.adm-ro { background: var(--pg-chip); }
+.adm-ro h2 small { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 500; color: var(--text-secondary); }
+.adm-ro h3 { margin: 12px 0 4px; font-size: 0.95rem; }
+.adm-raw { margin-top: 4px; }
+.adm-raw summary { cursor: pointer; font-size: 0.78rem; color: var(--text-secondary); }
+
+/* ---------- celulares ---------- */
+@media (max-width: 560px) {
+  .adm-logo { width: 46px; height: 46px; }
+  /* en el celular las 6 secciones se ven TODAS a la vez (3 × 2), sin tener que deslizar */
+  .adm-tabs { position: static; display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; gap: 4px; }
+  .adm-tab { flex-direction: column; gap: 2px; padding: 8px 4px; min-height: 58px; font-size: 0.78rem; white-space: normal; text-align: center; line-height: 1.15; }
+  .adm-tab .ico { font-size: 1.25rem; }
+  .adm-badge { position: absolute; top: 3px; right: 6px; min-width: 18px; height: 18px; font-size: 0.68rem; }
+  .adm-attn-card { flex-wrap: wrap; }
+  .adm-attn-card .ag { flex: 1 1 100%; text-align: right; }
+  .adm-amt { text-align: left; }
+  .adm-card .btnrow .btn { flex: 1 1 100%; }
+}

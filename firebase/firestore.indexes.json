@@ -1,0 +1,6 @@
+{
+  "indexes": [
+    { "collectionGroup": "paymentHistory", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "amount", "order": "ASCENDING" } ] }
+  ],
+  "fieldOverrides": []
+}

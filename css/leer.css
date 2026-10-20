@@ -1,0 +1,45 @@
+/* Pantalla "Leer preguntas y respuestas" (solo lectura). Reutiliza .opcion de quiz.css */
+.leer-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.leer-tab {
+  padding: 9px 16px; font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer;
+  color: var(--text-primary); background: var(--pg-glass-strong); border: 1px solid var(--pg-line); border-radius: 999px;
+}
+.leer-tab[aria-selected="true"] { color: #fff; background: var(--pg-grad); border-color: transparent; font-weight: 700; }
+.leer-tab small { opacity: 0.75; font-weight: 600; margin-left: 4px; }
+.leer-row { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; }
+.leer-row input[type="search"] {
+  flex: 1 1 260px; min-height: 44px; padding: 0 14px; font: inherit; font-size: 0.95rem;
+  color: var(--text-primary); background: var(--pg-glass-strong); border: 1px solid var(--pg-line); border-radius: 12px;
+}
+.leer-row .check { display: flex; align-items: center; gap: 8px; font-size: 0.92rem; cursor: pointer; }
+
+.leer-list { display: grid; gap: 14px; margin-bottom: 18px; }
+.leer-q { padding: clamp(16px, 3vw, 24px); }
+.leer-q > * + * { margin-top: 12px; }
+.leer-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.leer-num { font-weight: 800; color: var(--pg-chip-text); }
+.leer-text { margin: 0; font-size: 1.02rem; font-weight: 700; line-height: 1.5; white-space: pre-line; }
+.leer-q .opciones { gap: 8px; }
+.leer-q .opcion { cursor: default; padding: 12px 14px; }
+.leer-q .opcion:hover { transform: none; box-shadow: none; border-color: var(--pg-line); }
+.leer-q .opcion.correcta:hover { border-color: var(--success-color); }
+.leer-q .opcion.correcta { font-weight: 700; }
+.leer-q .opcion.correcta::after {
+  content: "Correcta"; margin-left: auto; align-self: center; padding: 2px 10px; border-radius: 999px;
+  font-size: 0.72rem; font-weight: 800; color: #fff; background: var(--success-color);
+}
+.leer-q .opcion.oculta { display: none; }
+.leer-src { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; }
+.leer-empty { padding: 28px; text-align: center; color: var(--text-secondary); }
+mark.hl { color: inherit; background: var(--warning-light); border-radius: 3px; padding: 0 2px; }
+.leer-top {
+  position: fixed; right: 18px; bottom: 18px; width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer;
+  font-size: 1.2rem; font-weight: 800; color: #fff; background: var(--pg-grad); box-shadow: var(--shadow-lg); z-index: 20;
+}
+
+/* evita que el contenido ensanche la tarjeta en pantallas pequeñas */
+.leer-list, .leer-q, .leer-q .opciones { min-width: 0; max-width: 100%; }
+.leer-list { grid-template-columns: minmax(0, 1fr); }
+.leer-q .opciones { grid-template-columns: minmax(0, 1fr); }
+.leer-q .opcion > span { min-width: 0; overflow-wrap: anywhere; white-space: pre-line; }
+.leer-text, .leer-src { overflow-wrap: anywhere; }

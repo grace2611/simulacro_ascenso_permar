@@ -1,0 +1,227 @@
+/*
+  ORDEN, ADAPTACIÓN A PANTALLAS Y ESTILO  ·  css/orden.css
+  -----------------------------------------------------------------------------
+  Esta hoja SOLO cambia la presentación. No toca ningún .js ni ningún id/clase que use la lógica.
+  Va enlazada AL FINAL de cada página, así que corrige lo anterior sin editar los demás CSS.
+  Si algún día quieres volver a como estaba, basta con quitar la línea <link ... orden.css> de los .html.
+
+  Qué resuelve:
+   1. La franja superior (🌙 modo oscuro y ✖ salir) queda reservada: ya nada se monta sobre el contenido.
+   2. Barra de cuenta, botones, títulos y tarjetas se adaptan a celulares pequeños sin cortar ni tapar texto.
+   3. Las rejillas no se desbordan en pantallas angostas (antes algunas exigían 260–290 px de ancho mínimo).
+   4. La explicación de la respuesta se muestra completa y a todo el ancho, debajo de los botones.
+   5. Pequeños retoques de estilo coherentes con el diseño actual (vidrio + degradado azul/violeta).
+*/
+
+/* ============================================================
+   0 · BASE
+   ============================================================ */
+::selection { background: var(--primary-light); color: var(--text-primary); }
+
+body {
+  line-height: 1.45;
+  /* franja superior reservada para 🌙 / ✖ + márgenes seguros (notch) del celular */
+  padding-top: calc(70px + env(safe-area-inset-top, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
+}
+
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+p, li { text-wrap: pretty; }
+
+/* nada se sale de su caja */
+.container, .page, .main-container, .panel, .quiz-box, .card, .mode, .stat, .tile, .catcard,
+.challenge, .badge-card, .plan-col, .plan-card, .plan-status, .plan-hero, .adm-card, .rv-item, .leer-q, .welcome {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ============================================================
+   1 · FRANJA SUPERIOR: 🌙 y ✖ (ya no se montan sobre el contenido)
+   ============================================================ */
+.theme-toggle {
+  top: calc(14px + env(safe-area-inset-top, 0px));
+  right: max(14px, env(safe-area-inset-right, 0px));
+}
+
+/* Causa del ✖ "encima del texto": la animación de entrada (ff-rise ... both) dejaba un transform en .container
+   y, por eso, un elemento "fixed" dentro de él dejaba de ser fijo y se movía con el contenido.
+   Con fill-mode "backwards" el transform desaparece al terminar la animación. */
+.container, .page { animation-fill-mode: backwards; }
+
+/* Banda superior: el contenido que sube al hacer scroll se desvanece detrás de 🌙 y ✖, así nunca se mezclan con el texto. */
+body::after {
+  content: ""; position: fixed; inset: 0 0 auto 0; z-index: 90; pointer-events: none;
+  height: calc(66px + env(safe-area-inset-top, 0px));
+  background: rgba(248, 250, 252, 0.82);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  -webkit-mask-image: linear-gradient(#000 68%, transparent); mask-image: linear-gradient(#000 68%, transparent);
+}
+:root[data-theme="dark"] body::after { background: rgba(10, 15, 30, 0.82); }
+
+/* ✖ Salir: vive en la franja superior, pegado al botón 🌙 (antes se montaba sobre la barra de cuenta). */
+.btn-salir {
+  position: fixed;
+  top: calc(14px + env(safe-area-inset-top, 0px));
+  right: calc(max(14px, env(safe-area-inset-right, 0px)) + 54px);
+  z-index: 100;
+  width: 44px;
+  height: 44px;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--pg-shadow);
+}
+
+/* los títulos ya no necesitan dejar hueco para el ✖ */
+#titulo, .container > h1, .container > h1:not(#titulo), .backlink { padding-right: 0; }
+
+@media (max-width: 560px) {
+  body { padding-top: calc(66px + env(safe-area-inset-top, 0px)); }
+  .btn-salir { top: calc(14px + env(safe-area-inset-top, 0px)); width: 44px; height: 44px; }
+  #titulo { min-height: 0; }
+}
+
+/* ============================================================
+   2 · BARRA DE CUENTA
+   ============================================================ */
+.account-bar {
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  box-shadow: var(--pg-shadow);
+}
+.acc-left { flex: 1 1 260px; }
+.acc-right { flex: 0 1 auto; justify-content: flex-end; }
+.acc-note { min-width: 0; overflow-wrap: anywhere; }
+
+@media (max-width: 560px) {
+  .account-bar { padding: 10px; gap: 10px; }
+  .acc-left, .acc-right { flex: 1 1 100%; }
+  .acc-right { justify-content: stretch; }
+  .acc-right .btn { flex: 1 1 auto; }
+}
+
+/* ============================================================
+   3 · BOTONES Y CONTROLES (el texto largo crece hacia abajo, nunca se corta)
+   ============================================================ */
+.btn, #expBtn, #nextBtn { padding-block: 10px; line-height: 1.25; text-align: center; max-width: 100%; }
+.btn.btn-sm { padding: 6px 14px; }
+.btn.big { width: 100%; }
+.pill span { padding-block: 8px; text-align: center; line-height: 1.25; }
+.pills .pill { max-width: 100%; }
+.leer-tab { max-width: 100%; min-height: 40px; text-align: left; line-height: 1.25; }
+
+/* ============================================================
+   4 · CENTRO DE ESTUDIO (index)
+   ============================================================ */
+.tittle { text-wrap: balance; overflow-wrap: anywhere; }
+.hub-top > div { min-width: 0; }
+
+.hub-section > h2 { display: flex; align-items: center; gap: 10px; line-height: 1.3; }
+.hub-section > h2::before {
+  content: ""; flex: 0 0 4px; align-self: stretch; min-height: 1em; border-radius: 4px; background: var(--pg-grad);
+}
+
+/* modalidades: el texto se ajusta al espacio y la insignia nunca lo aplasta */
+.mode > span:nth-child(2) { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+.mode .mi { flex: 0 0 48px; }
+.mode .badgecount { flex: none; }
+.mode:hover { border-color: rgba(37, 99, 235, 0.35); }
+.mode.locked:hover { transform: translateY(-1px); }
+
+/* categorías */
+.card { justify-content: flex-start; }
+.card > div { min-width: 0; }
+.card h2, .card p { overflow-wrap: anywhere; }
+.card p { line-height: 1.4; }
+.card:hover { border-color: rgba(37, 99, 235, 0.35); }
+.card.locked:hover { transform: translateY(-2px); }
+
+.today { grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
+.welcome { border-left: 4px solid var(--primary-color); }
+.welcome h2 { line-height: 1.25; }
+
+/* ============================================================
+   5 · PREGUNTAS Y RESPUESTAS
+   ============================================================ */
+.info p { min-width: 0; overflow-wrap: anywhere; }
+.opcion { min-width: 0; overflow-wrap: anywhere; }
+.opcion::before { flex: 0 0 30px; }
+#pregunta, .quiz-box > h2, .leer-text, .fq, .fa { overflow-wrap: anywhere; }
+.leer-q .opcion.correcta::after { flex: none; }
+
+/* Explicación: siempre completa y a todo el ancho, DEBAJO de los botones (antes quedaba apretada entre ellos). */
+#expText { order: 3; }
+#expText.show { flex: 1 1 100%; max-width: 100%; }
+#expText:not(.show):not(.expbox) { display: none; }
+/* En estudio/tarjetas la explicación usa la clase .expbox: aquí no debe heredar el "colapsado" del cuestionario. */
+.expbox#expText { flex: none; max-width: 100%; padding: 14px 16px; opacity: 1; overflow: visible; }
+
+/* Tarjetas de memoria: que el texto largo se desplace dentro de la tarjeta en vez de cortarse */
+.face { overflow-y: auto; overflow-wrap: anywhere; }
+
+/* ============================================================
+   6 · SIMULACRO (barra fija de tiempo)
+   ============================================================ */
+.exambar { top: calc(62px + env(safe-area-inset-top, 0px)); }   /* justo debajo de la banda superior */
+.examcount { min-width: 0; }
+/* casi opaca: el texto que pasa por debajo no se transparenta */
+.exambar { background: var(--surface-color); background: color-mix(in srgb, var(--surface-color) 95%, transparent); }
+@media (min-width: 900px) { .qnav { top: 146px; } }               /* el navegador de preguntas queda bajo la barra de tiempo */
+
+/* ============================================================
+   7 · REJILLAS: nunca más anchas que la pantalla
+   ============================================================ */
+.grid2          { grid-template-columns: repeat(auto-fit,  minmax(min(100%, 260px), 1fr)); }
+.catgrid        { grid-template-columns: repeat(auto-fit,  minmax(min(100%, 290px), 1fr)); }
+.plan-compare   { grid-template-columns: repeat(auto-fit,  minmax(min(100%, 260px), 1fr)); }
+.plan-grid      { grid-template-columns: repeat(auto-fit,  minmax(min(100%, 230px), 1fr)); }
+.pay-grid       { grid-template-columns: repeat(auto-fit,  minmax(min(100%, 240px), 1fr)); }
+.adm-stats      { grid-template-columns: repeat(auto-fit,  minmax(min(100%, 180px), 1fr)); }
+.adm-plan, .adm-lim { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); }
+.badges         { grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr)); }
+.tiles          { grid-template-columns: repeat(auto-fit,  minmax(min(100%, 130px), 1fr)); }
+
+/* tablas e historial */
+.sumtable th, .sumtable td, .catcard dt, .catcard dd { overflow-wrap: anywhere; }
+.hist li > button, .hist li > .row { min-width: 0; overflow-wrap: anywhere; }
+.qgrid, .tablewrap, .adm-bars { scrollbar-width: thin; }
+
+@media (max-width: 520px) {
+  .sumtable { font-size: 0.84rem; }
+  .sumtable th, .sumtable td { padding: 8px 5px; }
+  .stat .v { font-size: 1.3rem; }
+  .plan-hero { padding: 18px; }
+  .plan-hero-price strong { font-size: 1.9rem; }
+}
+
+/* ============================================================
+   8 · AVISOS Y VENTANAS
+   ============================================================ */
+.toasts { bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
+/* si el botón ↑ de la lectura está visible, los avisos suben para no taparlo */
+body:has(.leer-top:not([hidden])) .toasts { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+.leer-top { bottom: calc(18px + env(safe-area-inset-bottom, 0px)); }
+
+.wall-in, .boot-box { max-height: calc(100svh - 36px); overflow: auto; overflow-wrap: anywhere; }
+.wall-in .btnrow .btn { flex: 1 1 100%; }
+.modal-in { overflow-wrap: anywhere; }
+.modal-actions { justify-content: stretch; }
+
+/* ============================================================
+   9 · RETOQUES DE ESTILO
+   ============================================================ */
+.panel h2, .section-title { line-height: 1.25; }
+.stat, .catcard, .challenge, .badge-card, .plan-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.stat:hover, .catcard:hover, .challenge:hover { border-color: rgba(37, 99, 235, 0.3); box-shadow: var(--pg-shadow); }
+.btn:active:not(:disabled) { transform: translateY(0) scale(0.98); }
+.backlink { transition: transform 0.2s ease; }
+.backlink:hover { transform: translateX(-3px); text-decoration: none; }
+
+/* ============================================================
+   10 · DETALLES DE ESPACIADO
+   ============================================================ */
+/* el punto de la leyenda "Sin responder" heredaba el relleno de la clase .empty y salía como una caja alta */
+.dot.empty { padding: 0; }
+/* el texto de ayuda del simulacro quedaba pegado a la última opción */
+.quiz-box > .hint { margin-top: 14px; }

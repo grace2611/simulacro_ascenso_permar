@@ -1,0 +1,168 @@
+/* ===== Menú principal · estilo FinanceFlow ===== */
+
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 72px 16px 32px;
+}
+
+.page {
+  width: 100%;
+  max-width: 1040px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  animation: ff-rise 0.6s ease both;
+}
+
+.main-container {
+  padding: clamp(20px, 4vw, 44px);
+  text-align: center;
+  background: var(--pg-glass);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid var(--pg-edge);
+  border-radius: 28px;
+  box-shadow: var(--pg-shadow);
+}
+
+/* TÍTULOS */
+
+.tittle {
+  margin: 14px 0 10px;
+  font-size: clamp(1.6rem, 4.6vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  background: var(--pg-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtittle {
+  display: inline-flex;
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pg-chip-text);
+  background: var(--pg-chip);
+}
+
+/* CATEGORÍAS */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 26px 18px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--pg-glass-strong);
+  border: 1px solid var(--pg-edge);
+  border-radius: var(--pg-radius);
+  box-shadow: var(--pg-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--pg-shadow-hover);
+}
+
+.card:active {
+  transform: translateY(-1px);
+}
+
+.card-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 8px;
+  font-size: 1.7rem;
+  border-radius: 18px;
+  background: var(--pg-chip);
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.card p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* BOTÓN PROGRESO */
+
+.btnprogreso {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--pg-grad);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btnprogreso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.4);
+}
+
+@media (min-width: 760px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    padding-top: 64px;
+  }
+
+  .card {
+    flex-direction: row;
+    text-align: left;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+
+  .card-icon {
+    margin: 0;
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .card > div {
+    min-width: 0;
+  }
+}
+
