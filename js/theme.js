@@ -21,7 +21,8 @@ Se guarda en localStorage y se aplica como data-theme en <html>.
 
   function init() {
     var button = document.getElementById("themeToggle");
-    if (!button) return;
+    if (!button || button.getAttribute("data-theme-ready")) return;
+    button.setAttribute("data-theme-ready", "1");
 
     paint(button);
 

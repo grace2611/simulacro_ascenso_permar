@@ -41,6 +41,7 @@ p, li { text-wrap: pretty; }
    1 · FRANJA SUPERIOR: 🌙 y ✖ (ya no se montan sobre el contenido)
    ============================================================ */
 .theme-toggle {
+  z-index: 10000; /* por encima de la pantalla «Cargando…» (9999): el tema se puede cambiar aunque Firebase tarde */
   top: calc(14px + env(safe-area-inset-top, 0px));
   right: max(14px, env(safe-area-inset-right, 0px));
 }

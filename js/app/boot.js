@@ -59,6 +59,8 @@ function fatal(msg, detail) {
 overlay('<div class="boot-box"><div class="spinner" aria-hidden="true"></div><p>Cargando…</p></div>');
 
 (async function main() {
+  /* el botón 🌙/☀️ se activa YA, sin depender de Firebase ni del resto del arranque */
+  try { await loadScript("js/theme.js"); } catch (e) { console.error(e); }
   try { await loadScripts(BASE); } catch (e) { return fatal("Falta un archivo del sitio. Recarga la página.", String(e.message || e)); }
 
   let Session, State, Banks, Sync, Devices, Payments, FB;
@@ -153,13 +155,11 @@ overlay('<div class="boot-box"><div class="spinner" aria-hidden="true"></div><p>
     if (needsAdmin) {
       overlay('<div class="boot-box glass"><h2>Acceso restringido</h2><p>Esta sección es solo para la administración.</p><div class="btnrow"><a class="btn btn-primary" href="index.html">Volver al inicio</a></div></div>', "accessBlocked");
     } else Access.showWall("interactive");
-    await loadScript("js/theme.js");
     return;
   }
 
   if (DEF.module) { const m = await import(DEF.module); await m.init(ctx); }
   else await loadScript(DEF.page);
-  await loadScript("js/theme.js");
 
   /* ----- el acceso puede vencer MIENTRAS la persona estudia: se guarda lo pendiente y se muestra el aviso ----- */
   if (access && needsAccess) {
