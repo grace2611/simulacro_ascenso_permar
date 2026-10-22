@@ -621,7 +621,7 @@
  },
  {
   "id": "cultura-052",
-  "pregunta": "¿Cuál es el lago navegable más alto del mundo? Con 3,812 metros sobre el nivel del mar (msnm)",
+  "pregunta": "¿Cuál es el lago navegablemás alto del mundo? Con 3,812 metros sobre el nivel del mar (msnm)",
   "opciones": [
    "Lago Titicaca (Perú)",
    "Lago Poopó (Bolivia)",
@@ -734,7 +734,7 @@
    "Representa la pobreza del reino vegetal y el patrimonio natural del Perú.",
    "Representa las escaladas del guerras que sustuvo el Perú.",
    "Representa la riqueza del reino vegetal y el patrimonio natural del Perú.",
-   "Representa la riqueza del reino animal del Perú."
+   "Representa la riqueza del reino animal del Perú"
   ],
   "correcta": 2,
   "fuente": "Ministerio de Relaciones Exteriores del Perú. (2021). Símbolos Patrios: Escudo Nacional."
@@ -782,7 +782,7 @@
    "Representa la riqueza mineral del subsuelo peruano.",
    "Representa las escaladas del guerras que sustuvo el Perú.",
    "Representa la riqueza del reino vegetal y el patrimonio natural del Perú.",
-   "Representa la riqueza del reino animal del Perú."
+   "Representa la riqueza del reino animal del Perú"
   ],
   "correcta": 3,
   "fuente": "Ministerio de Relaciones Exteriores del Perú. (2021). Símbolos Patrios: Escudo Nacional."
@@ -818,7 +818,7 @@
    "Representa la riqueza mineral del subsuelo peruano.",
    "Representa las escaladas del guerras que sustuvo el Perú.",
    "Representa la riqueza del reino vegetal y el patrimonio natural del Perú.",
-   "Representa la riqueza del reino animal del Perú."
+   "Representa la riqueza del reino animal del Perú"
   ],
   "correcta": 0,
   "fuente": "Ministerio de Relaciones Exteriores del Perú. (2021). Símbolos Patrios: Escudo Nacional."

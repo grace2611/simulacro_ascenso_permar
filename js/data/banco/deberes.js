@@ -9,7 +9,7 @@
   P.BANCO["deberes"] = [
  {
   "id": "deberes-001",
-  "pregunta": "El personal de marinería será dado de baja por incapacidad física o psíquica que impida cumplir con el servicio, cuando se encuentre completamente incapacitado para el servicio por enfermedad o lesión producida:",
+  "pregunta": "El personal de marinería será dado de baja por incapacidad física o psíquica que impida cumplir con el servicio, cuando se encuentre completamente incapacitado para el servcio por enfermedad o lesión producida:",
   "opciones": [
    "Encontrándose con permiso",
    "Como consecuencia del servicio",
@@ -21,7 +21,7 @@
  },
  {
   "id": "deberes-002",
-  "pregunta": "Es la información electrónica útil, la cual será actualizada, correspondiendo ejercer la seguridad necesaria a los jefes de personal de las unidades independientes.",
+  "pregunta": "Es la información electrónica útil, la cual será actualizada, correspondiendo ejercer la seguridad necesaria a los jefes de personal de las unidades independencias.",
   "opciones": [
    "Foja de notas y conceptos",
    "Escalafón",
@@ -33,7 +33,7 @@
  },
  {
   "id": "deberes-003",
-  "pregunta": "Con respecto a la educación técnico-productiva, a la orientación básica naval del tripulante de cubierta le corresponde la certificación técnico productiva equivalente a maniobras; entonces, a auxiliar de servicios le corresponde:",
+  "pregunta": "Con respecto a la educación técnico-productiva, a la orientación básica naval del tripulante de cubierta le corresponde la certificación técnico productiva equivalente a maniobras,entonces a auxiliar de servicios le corresponde:",
   "opciones": [
    "Servicio de mesa y atención al cliente",
    "Auxiliar de peluquería y sastrería",
@@ -45,9 +45,9 @@
  },
  {
   "id": "deberes-004",
-  "pregunta": "Una de las causales de baja para el personal de marinería:",
+  "pregunta": "Una de las causales de baja para el personal de marinería",
   "opciones": [
-   "Viajar al extranjero sin autorización",
+   "Viajar al extranjeo sin autorización",
    "Enfermedad incurable",
    "Por contraer matrimonio sin autorización",
    "Tiempo cumplido"
@@ -57,10 +57,10 @@
  },
  {
   "id": "deberes-005",
-  "pregunta": "Es la disciplina científica y tecnológica que surge de la evolución y fusión de las telecomunicaciones y de la informática:",
+  "pregunta": "Es la disciplina científica y tecnológica que surge de la evolución y fusión de las telecomunicaciones y de la informática",
   "opciones": [
    "Seguridad de redes",
-   "Radiocomunicaciones",
+   "Radio comunicaciones",
    "Dirección telemática",
    "Telemática"
   ],
@@ -69,7 +69,7 @@
  },
  {
   "id": "deberes-006",
-  "pregunta": "Está considerado como una efeméride naval:",
+  "pregunta": "Esta considerado como una efeméride naval:",
   "opciones": [
    "Día otorgado al clima laboral",
    "Pase a la situación militar de retiro",
@@ -85,7 +85,7 @@
   "opciones": [
    "Mantener incólume el honor y majestad de la bandera nacional",
    "Mantener el honor y majestad de la bandera de guerra",
-   "Mantener incólume el honor y majestad del pabellón nacional",
+   "Mantener incólume el honor y majestad de pabellón nacional",
    "Mantener intachable el honor y majestad del pabellón y bicolor"
   ],
   "correcta": 2,
@@ -105,7 +105,7 @@
  },
  {
   "id": "deberes-009",
-  "pregunta": "La competencia __________ es propia del personal de marinería y alumnos:",
+  "pregunta": "La competencia…………. es propia del personal de marinería y alumnos",
   "opciones": [
    "Adaptabilidad",
    "Desarrollo de personas",
@@ -141,7 +141,7 @@
  },
  {
   "id": "deberes-012",
-  "pregunta": "¿Qué equivalente tiene el grado de capitán de navío en el Ejército y la Fuerza Aérea?",
+  "pregunta": "¿Qué equivalente tiene el grado de capitán de navío en el Ejército de la Fuerza Aérea?",
   "opciones": [
    "Teniente general",
    "Capitán",
@@ -153,7 +153,7 @@
  },
  {
   "id": "deberes-013",
-  "pregunta": "Coordinará con la __________ el desarrollo del plan integral de capacitación para la prevención de la posesión, consumo y control del tráfico ilícito de drogas:",
+  "pregunta": "Coordinará con la ___________ el desarrollo del plan integral de capacitación para la prevención de la posesión, consumo y control del tráfico ilícito de drogas",
   "opciones": [
    "Dirección de Administración de Personal de la Marina",
    "Dirección General del Personal de la Marina",
@@ -165,7 +165,7 @@
  },
  {
   "id": "deberes-014",
-  "pregunta": "Los permisos, vacaciones y licencias podrán ser suspendidos si las exigencias del servicio así lo requieren, excepto por:",
+  "pregunta": "Los permisos, vacaciones y licencias podrán ser suspendidos si las exigencias del servicio así lo requieren, excepto por :",
   "opciones": [
    "Vacaciones en el extranjero",
    "Licencias por estudio",
@@ -201,7 +201,7 @@
  },
  {
   "id": "deberes-017",
-  "pregunta": "Evalúa la aplicación de los procedimientos establecidos en su unidad o dependencia, es un indicador de conducta de la competencia __________:",
+  "pregunta": "Evalúa la aplicación de los procedimientos establecidos en su unidad o dependencia es un indicador de conducta de la competencia…………..",
   "opciones": [
    "Supervisión y monitoreo",
    "Minuciosidad",
@@ -213,7 +213,7 @@
  },
  {
   "id": "deberes-018",
-  "pregunta": "Es el indicativo del Instituto de Educación Superior Tecnológico Público Naval:",
+  "pregunta": "Es el indicativo del Instituto de Educación Superior Tecnológico Público Naval",
   "opciones": [
    "DIRESGRUM",
    "IESTPN-CITEN",
@@ -225,7 +225,7 @@
  },
  {
   "id": "deberes-019",
-  "pregunta": "La gente tiene sus propias opiniones y, por lo tanto, acepta las diferencias individuales; es un indicativo de conducta de la competencia __________:",
+  "pregunta": "La gente tiene sus propias opiniones y por lo tanto, acepta las diferencias individuales, es un indicativo de conducta de la competencia………….",
   "opciones": [
    "Desarrollo de personas",
    "Comunicación efectiva",
@@ -237,7 +237,7 @@
  },
  {
   "id": "deberes-020",
-  "pregunta": "El personal naval que muere cumpliendo las funciones y deberes que le son propios o por órdenes de la superioridad:",
+  "pregunta": "El personal naval que muere cumpliendo las funciones y deberes que le son propios o de órdenes de la superioridad.",
   "opciones": [
    "Fallecimiento en acción de armas",
    "Fallecimiento en acto del servicio",
@@ -264,9 +264,9 @@
   "pregunta": "Las formas de uso oficial se clasifican en:",
   "opciones": [
    "Formas internas y externas generales",
-   "Formas especiales, circunstanciales y externas",
+   "Formas especiales, circunstanciales, externas",
    "Formas generales, especiales e internas",
-   "Formas internas, especiales y dinámicas"
+   "Formas internas, especiales, dinámicas"
   ],
   "correcta": 2,
   "fuente": "Reglamento de Documentación Oficial de la Marina."
@@ -285,12 +285,12 @@
  },
  {
   "id": "deberes-024",
-  "pregunta": "El personal subalterno de la M.G.P. está compuesto por aquellos miembros de la institución que ostentan la categoría de:",
+  "pregunta": "El personal subalterno de la M.G.P. esta compuesto por aquellos miembros de la institución que ostentan la categoría de:",
   "opciones": [
-   "Asesores maestros, técnicos supervisores, oficiales de mar y marineros",
-   "Asesores maestros, técnicos supervisores, oficiales de mar y alumnos",
-   "Técnicos supervisores, técnicos, oficiales de mar y alumnos",
-   "Técnicos supervisores, técnicos, oficiales de mar, alumnos y marineros"
+   "Asesores maestro, técnicos supervisores, oficiales de mar y marineros.",
+   "Asesores maestros, técnicos supervisores, oficiales de mar y alumnos.",
+   "Técnicos supervisores, técnicos, oficiales de mar y alumnos.",
+   "Técnicos supervisores, técnicos, oficiales de mar, alumnos y marineros."
   ],
   "correcta": 2,
   "fuente": "Ley de la Marina de Guerra del Perú."
@@ -309,7 +309,7 @@
  },
  {
   "id": "deberes-026",
-  "pregunta": "¿Qué dirección o comandancia dictará las disposiciones necesarias a fin de prevenir la posesión, el consumo y control del tráfico ilícito de drogas en las unidades y dependencias bajo su responsabilidad?",
+  "pregunta": "¿Qué dirección o comandancia dictará las disposiciones necesarias, a fin de prevenir la posesión, el consumo y control del tráfico ilícito de drogas en las unidades y dependencias bajo su responsabilidad?",
   "opciones": [
    "Dirección de Inteligencia de la Marina",
    "Inspectoría General de la Marina",
@@ -321,7 +321,7 @@
  },
  {
   "id": "deberes-027",
-  "pregunta": "Es una medida pasiva de la contrainteligencia que tiene como actividad principal impedir o neutralizar la infiltración:",
+  "pregunta": "Es una medida pasiva de la contrainteligencia que tiene como actividad principal impedir a neutralizar la infiltración.",
   "opciones": [
    "Infiltración",
    "Contrainteligencia",
@@ -333,7 +333,7 @@
  },
  {
   "id": "deberes-028",
-  "pregunta": "En la insignia se distingue a todo buque de la Marina de Guerra del Perú al mando de un oficial nombrado como comandante, con el grado menor a capitán de navío:",
+  "pregunta": "En la insignia se distingue a todo buque de la Marina de Guerra del Perú al mando de un oficial nombrado como comandante, con el grado menor a capitán de navío.",
   "opciones": [
    "Gallardete de comandante",
    "Gallardete de segundo comandante",
@@ -345,7 +345,7 @@
  },
  {
   "id": "deberes-029",
-  "pregunta": "Es el reglamento de capacidad psicosomática de los servicios de salud de la Marina de Guerra del Perú:",
+  "pregunta": "Es el reglamento de capacidad psicosomática de los servicios de salud de la Marina de Guerra del Perú",
   "opciones": [
    "RESEMAR-11107",
    "RECASIC-13501",
@@ -357,7 +357,7 @@
  },
  {
   "id": "deberes-030",
-  "pregunta": "Doctrina y política general de la Marina de Guerra del Perú:",
+  "pregunta": "Doctrina y política general de la Marina de Guerra del Perú",
   "opciones": [
    "DOCTEL-13332",
    "DOPSIC-11111",
@@ -369,7 +369,7 @@
  },
  {
   "id": "deberes-031",
-  "pregunta": "Se aplica en el ámbito militar y no militar:",
+  "pregunta": "Se aplica en el ámbito militar y no militar.",
   "opciones": [
    "Doctrina de seguridad y defensa nacional",
    "Nivel estratégico",
@@ -381,9 +381,9 @@
  },
  {
   "id": "deberes-032",
-  "pregunta": "La competencia común de Persuba para todos los grados es:",
+  "pregunta": "La competencia común de Persuba para todos los grados es……….",
   "opciones": [
-   "Proactividad",
+   "Pro actividad",
    "Desarrollo de personas",
    "Compromiso con la Marina de Guerra del Perú",
    "Búsqueda de información"
@@ -393,7 +393,7 @@
  },
  {
   "id": "deberes-033",
-  "pregunta": "La junta de exámenes de capacidad psicosomática elevará los resultados de los exámenes a la:",
+  "pregunta": "La junta de exámenes de capacidad psicosomática elevará los resultados de los exámenes ala:",
   "opciones": [
    "Dirección de Administración del Personal",
    "Dirección General del Personal",
@@ -417,7 +417,7 @@
  },
  {
   "id": "deberes-035",
-  "pregunta": "Diseña sistemas o prácticas que permiten recoger información de forma habitual; es un indicador de conducta de la competencia:",
+  "pregunta": "Diseña sistemas o prácticas que permiten recoger información de forma habitual, es un indicador de conducta de la competencia -----------------",
   "opciones": [
    "Comunicación efectiva",
    "Búsqueda de información",
@@ -429,7 +429,7 @@
  },
  {
   "id": "deberes-036",
-  "pregunta": "No será izado por buques cuando se encuentren en reparación, en dique o en faena de combustible o explosivos:",
+  "pregunta": "No será izado por buques cuando se encuentren en reparación, en dique o en faena de combustible o explosivos.",
   "opciones": [
    "Pabellón nacional",
    "Tercer repetidor",
@@ -441,7 +441,7 @@
  },
  {
   "id": "deberes-037",
-  "pregunta": "Son las instrucciones para el servicio de racionamiento en las unidades y dependencias:",
+  "pregunta": "Son las instrucciones para el servicio de racionamiento en las unidades y dependencias.",
   "opciones": [
    "ISPRIG-13010",
    "ISP-13301",
@@ -455,17 +455,17 @@
   "id": "deberes-038",
   "pregunta": "Es un beneficio en el servicio activo:",
   "opciones": [
-   "Asignación de un sueldo",
+   "Asignacion de un sueldo",
    "Descuento del 30% en cualquier supermercado",
    "Recibir educación técnico productiva",
-   "Viáticos cada vez que quiera viajar a su ciudad natal"
+   "Viaticos cada vez que quiera viajar a su ciudad natal"
   ],
   "correcta": 2,
   "fuente": "Beneficios del Personal Naval."
  },
  {
   "id": "deberes-039",
-  "pregunta": "¿Cuál es la abreviatura de la publicación: Ley de la Marina de Guerra del Perú?",
+  "pregunta": "Cual es la abreviatura de la publicación: Ley de la Marina de Guerra del Perú.",
   "opciones": [
    "LEMAR",
    "LESIM",
@@ -479,17 +479,17 @@
   "id": "deberes-040",
   "pregunta": "La clasificación de las inspecciones en cuanto al conocimiento por el organismo inspeccionado se clasifican en:",
   "opciones": [
-   "Inspección programada e inspección inopinada",
-   "Inspección operativa e inspección general",
-   "Inspección parcial e inspección media",
-   "Inspección regular e inspección conjunta"
+   "Inspección programada y inspección inopinada",
+   "Inspección operativa y inspección general",
+   "Inspección parcial y inspección media",
+   "Inspección regular y inspección conjunta"
   ],
   "correcta": 0,
   "fuente": "Reglamento de Inspecciones de la Marina."
  },
  {
   "id": "deberes-041",
-  "pregunta": "Espacio físico que pertenece a la realidad marítima (océano, ríos, lagos y espacio aéreo) en el que se realizan las actividades correspondientes a los intereses marítimos y al poder naval:",
+  "pregunta": "Espacio físico que pertenece a la realidad marítima (oceano, rios, lagos y espacio aéreo) en el que se realizan las actividades correspondientes a los intereses marítimos y al poder naval",
   "opciones": [
    "Alta mar",
    "Ámbito marítimo",
@@ -501,7 +501,7 @@
  },
  {
   "id": "deberes-042",
-  "pregunta": "¿Qué significa la sigla MACOMAR?",
+  "pregunta": "Que significa la sigla MACOMAR.",
   "opciones": [
    "Manual de conceptos y terminología sobre la realidad marítima",
    "Manual de conceptos sobre la realidad marítima",
@@ -515,8 +515,8 @@
   "id": "deberes-043",
   "pregunta": "Para el personal de marinería, el tiempo de servicio será:",
   "opciones": [
-   "Mínimo 06 meses y máximo 02 años",
-   "Mínimo 03 meses y máximo 02 años",
+   "Mínimo 06 meses máximo 02 años",
+   "Mínimo 03 meses máximo 02 años",
    "Mínimo 01 año y máximo 02 años",
    "Mínimo 02 años y máximo 04 años"
   ],
@@ -525,7 +525,7 @@
  },
  {
   "id": "deberes-044",
-  "pregunta": "La clasificación de archivo para la auditoría en general es:",
+  "pregunta": "La clasificación de archivo para la auditoria en general es:",
   "opciones": [
    "L.802",
    "L.804",
@@ -549,7 +549,7 @@
  },
  {
   "id": "deberes-046",
-  "pregunta": "Ejecuta la política de contrainteligencia dispuesta por el comandante general de la Marina:",
+  "pregunta": "Ejecuta la política de contrainteligencia dispuesta por el comandante general de la Marina.",
   "opciones": [
    "El inspector general de la Marina",
    "Director de inteligencia de la Marina",
@@ -561,9 +561,9 @@
  },
  {
   "id": "deberes-047",
-  "pregunta": "No es considerado puesto de alta responsabilidad:",
+  "pregunta": "No es considerado puesto de alta responsabilidad.",
   "opciones": [
-   "Secretaría general",
+   "Secretaria general",
    "Peluquería",
    "Estación de radio",
    "Oficina de seguridad"
@@ -573,11 +573,11 @@
  },
  {
   "id": "deberes-048",
-  "pregunta": "La clasificación general por la modalidad del servicio militar:",
+  "pregunta": "La clasificacion general por la modalidad del servicio militar:",
   "opciones": [
-   "Acuartelado, no acuartelado o comités de autodefensa",
+   "Acuartelado, no acuartelado o comites de autodefensa",
    "Servicio militar o reenganchado",
-   "Por orientación o reenganchado",
+   "Por orientacion o reenganchado",
    "Acuartelado, reenganchado o comité de autodefensa"
   ],
   "correcta": 0,
@@ -585,47 +585,47 @@
  },
  {
   "id": "deberes-049",
-  "pregunta": "Definición de antigüedad:",
+  "pregunta": "Definicion de antigüedad:",
   "opciones": [
    "Es el tiempo de servicio real y efectivo en un mismo grado",
-   "A mayor grado, mayor antigüedad",
-   "La preeminencia que tiene un grumete, marinero o cabo",
-   "Es el tiempo de servicio que tiene hasta que pase a licencia"
+   "A mayor grado, mayor antigüedad.",
+   "La preeminencia que tiene un grumete, marinero o cabo.",
+   "Es el tiempo de servicio que tiene hasta que pase a licencia."
   ],
   "correcta": 0,
   "fuente": "Reglamento de Personal Naval."
  },
  {
   "id": "deberes-050",
-  "pregunta": "¿Cuál es el tiempo mínimo de servicio en dependencias?",
+  "pregunta": "¿Cúal es el tiempo mínimo de servicio de dependencias?",
   "opciones": [
    "Mínimo de 6 meses",
    "Mínimo de 5 meses",
-   "Mínimo de 4 meses",
-   "Mínimo de 3 meses"
+   "Minimo de 4 meses",
+   "Minimo de 3 meses"
   ],
   "correcta": 0,
   "fuente": "Normas de Destino del Personal."
  },
  {
   "id": "deberes-051",
-  "pregunta": "¿Cuál es el tiempo mínimo y máximo de servicio en zonas navales fuera del área de Lima y Callao?",
+  "pregunta": "¿Cúal es tiempo mínimo y maximo de servicio en zonas navales fuera de el area de Lima y Callao?",
   "opciones": [
-   "Mínimo 6 meses y máximo 12 meses",
-   "Mínimo 12 meses y máximo 24 meses",
-   "Mínimo 18 meses y máximo 24 meses",
-   "Mínimo 12 meses y máximo 20 meses"
+   "Mínima 6 meses máxima 12 meses",
+   "Minima 12 meses maxima 24 meses",
+   "Minima 18 meses maxima 24 meses",
+   "Minimo 12 meses maxima 20 meses"
   ],
   "correcta": 1,
   "fuente": "Reglamento de Destinos del Personal Naval."
  },
  {
   "id": "deberes-052",
-  "pregunta": "¿Quiénes son los involucrados para una comunicación de traslado?",
+  "pregunta": "¿Quienes son los involucrados para una comunicación de traslado?",
   "opciones": [
    "DIPERADMON – unidades afectadas",
-   "DISAMAR – unidades afectadas",
-   "DIPERMAR – DIPERADMON",
+   "DISAMAR- unidades afectadas",
+   "DIPERMAR- DIPERADMON",
    "JEMGEMAR – unidades afectadas"
   ],
   "correcta": 0,
@@ -633,9 +633,9 @@
  },
  {
   "id": "deberes-053",
-  "pregunta": "El poder marítimo está conformado por:",
+  "pregunta": "El poder marítimo esta conformado por:",
   "opciones": [
-   "Intereses marítimos + poder naval",
+   "Intereses marítimo + poder naval",
    "Potencial marítimo + poder marítimo",
    "Poder naval + poder marítimo",
    "Poder marítimo total"
@@ -649,7 +649,7 @@
   "opciones": [
    "Ordinarios y especiales",
    "Especiales y por asuntos personales",
-   "Especiales y por condición de franco",
+   "Especiales y por condicion de franco",
    "Por contrato de reenganche y especiales"
   ],
   "correcta": 0,
@@ -657,10 +657,10 @@
  },
  {
   "id": "deberes-055",
-  "pregunta": "No corresponde a un derecho común del personal de marinería de acuerdo al PERMAR-13016:",
+  "pregunta": "No corresponde a un derecho comun del personal de marineria de acuerdo al PERMAR-13016",
   "opciones": [
-   "Recibir un trato justo del superior jerárquico",
-   "Recibir la preparación necesaria para su desempeño en el servicio",
+   "Recibir un trato justo del superior jerarquico",
+   "Recibir la preparacion necesaria para su desempeño en el servicio",
    "Gozar de permisos ordinarios y especiales",
    "Asumir las guardias establecidas"
   ],
@@ -681,9 +681,9 @@
  },
  {
   "id": "deberes-057",
-  "pregunta": "Serán sometidos a un examen toxicológico el personal naval que acuda al centro médico naval:",
+  "pregunta": "Serán sometidos a un examen toxicológico el personal naval que acuda al centro medico naval:",
   "opciones": [
-   "Por tener cita médica",
+   "Por tener cita medica",
    "A consecuencia de un accidente o un hecho fortuito",
    "Por recoger medicinas",
    "Por tratamiento ambulatorio"
@@ -693,7 +693,7 @@
  },
  {
   "id": "deberes-058",
-  "pregunta": "No es considerado parte del procedimiento de seguridad a seguir con las visitas:",
+  "pregunta": "No es considerado parte del procedimiento de seguridad a seguir con las visitas.",
   "opciones": [
    "Control",
    "Vigilancia",
@@ -717,7 +717,7 @@
  },
  {
   "id": "deberes-060",
-  "pregunta": "La institución para la detección y determinación del consumo de drogas por parte del personal naval puede realizar los análisis toxicológicos correspondientes en forma __________ al personal naval:",
+  "pregunta": "La institución para la detección y determinación del consumo de drogas por parte del personal naval puede realizar los análisis toxicológicos correspondientes en forma ………………… al personal naval",
   "opciones": [
    "Inopinada",
    "Programada",
@@ -729,7 +729,7 @@
  },
  {
   "id": "deberes-061",
-  "pregunta": "Evalúa el cumplimiento de metas de la unidad o dependencia con respecto a los resultados esperados, es un indicador de conducta de la competencia:",
+  "pregunta": "Evalúa el cumplimiento de metas de la unidad o dependencia con respecto a los resultados esperados, es un indicador de conducta de la competencia…………",
   "opciones": [
    "Dominio técnico",
    "Minuciosidad",
@@ -740,7 +740,7 @@
  },
  {
   "id": "deberes-062",
-  "pregunta": "Es el reglamento de instrucciones sobre correspondencia naval:",
+  "pregunta": "Es el reglamento de instrucciones sobre correspondencia naval",
   "opciones": [
    "ISCON-13303",
    "ISIPI-13604",
@@ -751,23 +751,23 @@
  },
  {
   "id": "deberes-063",
-  "pregunta": "Cuando se decrete duelo oficial se izará el pabellón nacional a media asta:",
+  "pregunta": "Cuando se decrete duelo oficial se izará el pabellón nacional a media asta",
   "opciones": [
    "En todos los edificios de los bancos",
    "En todos los edificios del Estado, en todos los edificios de las Fuerzas Armadas y Policía Nacional",
-   "Se suspenderán las actividades laborales en el momento de la inhumación",
+   "Se suspenderá las actividades laborales en el momento de la inhumación",
    "Solo en las plazas de armas de las provincias"
   ],
   "correcta": 1
  },
  {
   "id": "deberes-064",
-  "pregunta": "¿Qué repercusiones ocasiona a las personas si consumen droga?",
+  "pregunta": "¿Qué repercusiones ocasiona a la personas si consumen droga?",
   "opciones": [
-   "Pérdida de los valores y patrones de conducta",
+   "Perdida de los valores y patrones de conducta",
    "Problemas psicológicos",
    "Falta de ánimo y de interés",
-   "Pérdida de ánimo"
+   "Perdida de ánimo"
   ],
   "correcta": 0
  },
@@ -778,7 +778,7 @@
    "Cuando no sean atacadas",
    "Cuando no hayan agotado todos los medios de persuasión a su alcance para normalizar el orden alterado",
    "Cuando hayan agotado todos los medios de persuasión a su alcance para normalizar el orden alterado",
-   "Cuando no se vean rodeadas o amenazadas en forma tal que peligre la misión, la vida o la seguridad"
+   "Cuando no se vean rodeadas o amenazadas en forma tal, que peligre la misión, la vida o la seguridad"
   ],
   "correcta": 2
  },
@@ -795,18 +795,18 @@
  },
  {
   "id": "deberes-067",
-  "pregunta": "Es aquella información que contiene consejos, recomendaciones u opiniones como parte del proceso deliberativo y consultivo previo a la toma de una decisión de gobierno:",
+  "pregunta": "Es aquella información que contiene consejos, recomendaciones u opiniones como parte del proceso deliberativo y consultivo previo a la toma de una decisión de gobierno.",
   "opciones": [
    "Confidencial",
    "Reservada",
    "Secreto",
-   "Público"
+   "Publico"
   ],
   "correcta": 0
  },
  {
   "id": "deberes-068",
-  "pregunta": "¿Quién tomará acción para proteger y mantener la seguridad del buque?",
+  "pregunta": "¿Quién tomara acción para proteger y mantener la seguridad del buque?",
   "opciones": [
    "El comandante",
    "El segundo comandante",
@@ -817,7 +817,7 @@
  },
  {
   "id": "deberes-069",
-  "pregunta": "Son inherentes a la función militar; su ejercicio hace que el militar actúe conforme a los principios y normas establecidas por las Fuerzas Armadas:",
+  "pregunta": "Son inherentes a la función militar, su ejercicio hace que el militar actue conforme a los principios y normas establecidas por las Fuerzas Armadas",
   "opciones": [
    "Virtudes militares",
    "Valores militares",
@@ -839,7 +839,7 @@
  },
  {
   "id": "deberes-071",
-  "pregunta": "Atención, arrear, izar, aguantar, afirmar:",
+  "pregunta": "Atención, arrear, izar, aguantar, afirmar.",
   "opciones": [
    "Toque operativo",
    "Toque administrativo",
@@ -850,10 +850,10 @@
  },
  {
   "id": "deberes-072",
-  "pregunta": "Es un documento mediante el cual el personal naval efectúa una gestión a título personal cuando se trate de asuntos de competencia solo del interesado:",
+  "pregunta": "Es un documento mediante el cual el personal naval, efectua una gestión a titulo personal cuando se trate de asuntos de competencia solo del interesado",
   "opciones": [
-   "Guía de destino",
-   "Memorándum",
+   "Guia de destino",
+   "Memorandum",
    "Solicitud",
    "Informe"
   ],
@@ -894,7 +894,7 @@
  },
  {
   "id": "deberes-076",
-  "pregunta": "\"Actúa incluso en circunstancias inciertas, cuando cuenta con información limitada\", está dentro de un indicador de conducta de la competencia:",
+  "pregunta": "\"Actúa incluso en circunstancias inciertas, cuando cuenta con información limitada\", esta dentro de un indicador de conducta de la competencia ______________________",
   "opciones": [
    "Adaptabilidad",
    "Autocontrol",
@@ -905,7 +905,7 @@
  },
  {
   "id": "deberes-077",
-  "pregunta": "¿Qué órgano investiga las actividades de oceanografía y meteorología?",
+  "pregunta": "¿Que órgano investiga las actividades de oceanografía y meteorología?",
   "opciones": [
    "DICAPI",
    "DIHIDRONAV",
@@ -916,7 +916,7 @@
  },
  {
   "id": "deberes-078",
-  "pregunta": "Es un documento de uso externo que constituye el medio de comunicación entre la Marina de Guerra del Perú con personas naturales y jurídicas:",
+  "pregunta": "Es un documento de uso externo que constituye el medio de comunicación entre la Marina de Guerra del Perú con personas naturales y jurídicas",
   "opciones": [
    "Carta",
    "Solicitud",
@@ -927,10 +927,10 @@
  },
  {
   "id": "deberes-079",
-  "pregunta": "Es la atención en consultorios que se brinda al beneficiario en los centros de salud de la institución asociados al sistema de salud de la Marina:",
+  "pregunta": "Es la atención en consultorios que se brindan al beneficiario en los centro de salud de la institución asociados al sistema de salud de la Marina:",
   "opciones": [
    "Tratamiento ambulatorio",
-   "Tratamiento médico",
+   "Tratamiento medico",
    "Tratamiento permanente",
    "Tratamiento en centro de salud"
   ],
@@ -938,10 +938,10 @@
  },
  {
   "id": "deberes-080",
-  "pregunta": "Clases de toque de pito de contramaestre:",
+  "pregunta": "Clases de toque de pito de contramaestre",
   "opciones": [
    "Honores",
-   "Cánticos",
+   "Canticos",
    "Ceremonias",
    "Operativos y administrativos"
   ],
@@ -949,20 +949,20 @@
  },
  {
   "id": "deberes-081",
-  "pregunta": "No es considerado una clase de visita a las unidades y dependencias:",
+  "pregunta": "No es considerado una clase de visita a las unidades y dependencias.",
   "opciones": [
    "Oficiales",
    "Sociales",
    "Recreativas",
-   "Públicas"
+   "Publicas"
   ],
   "correcta": 2
  },
  {
   "id": "deberes-082",
-  "pregunta": "Es cuando la acción de enseñanza-aprendizaje combina las modalidades semipresencial y virtual:",
+  "pregunta": "Es cuando la acción de enseñanza, aprendizaje combina la modalidades semi presencial y virtual:",
   "opciones": [
-   "Modalidad semipresencial",
+   "Modalidad semi presencial",
    "Modalidad virtual",
    "Modalidad mixta",
    "Modalidad presencial"
@@ -973,7 +973,7 @@
   "id": "deberes-083",
   "pregunta": "¿Cuáles son los criterios que deben regir toda ceremonia naval?",
   "opciones": [
-   "Uniformidad, sobriedad y destreza",
+   "Uniformidad, sobridad y destreza",
    "Uniformidad, seguridad y puntualidad",
    "Solemnidad, sobriedad y responsabilidad",
    "Uniformidad, solemnidad, sobriedad y seguridad"
@@ -993,18 +993,18 @@
  },
  {
   "id": "deberes-085",
-  "pregunta": "Es la devolución de los gastos efectuados por el beneficiario de acuerdo a las reglamentaciones vigentes:",
+  "pregunta": "Es la devolución de los gastos efectuados por el beneficiario de acuerdo a las reglamentaciones vigentes.",
   "opciones": [
    "Reintegro",
    "Devolución",
    "Reembolso",
-   "Pago por devolución"
+   "Págo por devolución"
   ],
   "correcta": 2
  },
  {
   "id": "deberes-086",
-  "pregunta": "Supervisa la gestión del personal a su cargo, es un indicador de conducta de la competencia:",
+  "pregunta": "Supervisa la gestión del personal a su cargo, es un indicador de conducta de la competencia…………..",
   "opciones": [
    "Trabajo en equipo",
    "Orientación/asesoramiento",
@@ -1015,7 +1015,7 @@
  },
  {
   "id": "deberes-087",
-  "pregunta": "Otro nombre por el que se le conoce a la guirnalda:",
+  "pregunta": "Otro nombre por el que se le conoce a la guirnalda",
   "opciones": [
    "Adorno",
    "Escaparate",
@@ -1037,11 +1037,11 @@
  },
  {
   "id": "deberes-089",
-  "pregunta": "Brinda sugerencias de cómo realizar el trabajo correctamente, es un indicador de conducta de la competencia:",
+  "pregunta": "Brinda sugerencias de como realizar el trabajo correctamente es un indicador de conducta de la competencia",
   "opciones": [
    "Comunicación efectiva",
    "Supervisión y monitoreo",
-   "Proactividad",
+   "Pro actividad",
    "Dominio técnico"
   ],
   "correcta": 3
@@ -1062,7 +1062,7 @@
   "pregunta": "El comandante general de la Marina es designado por:",
   "opciones": [
    "La Junta de Almirantes",
-   "El presidente de la República",
+   "El presidente de la Republica",
    "El ministro de Defensa",
    "El jefe del Comando Conjunto de las FFAA"
   ],
@@ -1072,7 +1072,7 @@
   "id": "deberes-092",
   "pregunta": "Una base naval es marítima cuando se encuentra ubicada en:",
   "opciones": [
-   "La ribera de un río",
+   "La ribera de un rio",
    "La costa",
    "La orilla de un lago",
    "Una dependencia"
@@ -1081,7 +1081,7 @@
  },
  {
   "id": "deberes-093",
-  "pregunta": "Llevará impresa en el centro un ancla en posición horizontal ocupando 1/3 de la franja blanca. Estará unida al tope del palo mayor por el lado más ancho, con cintas de color rojo o una driza de color blanco:",
+  "pregunta": "Llevará impresa en el centro un ancla en posición horizontal ocupando 1/3 de la franja blanca . Estará unida al tope del palo mayor por el lado más ancho, con cintas de color rojo o una driza de color blanco",
   "opciones": [
    "Gallardete de comandante de unidad",
    "Jack nacional",
@@ -1092,7 +1092,7 @@
  },
  {
   "id": "deberes-094",
-  "pregunta": "Establecer las normas y disposiciones pertinentes para otorgar distintivos al personal naval es un objetivo del:",
+  "pregunta": "Establecer las normas y disposiciones pertinentes, para otorgar distintivos al personal naval, es un objetivo del:",
   "opciones": [
    "REDIPEN-13022",
    "REASPERSUB-13013",
@@ -1103,18 +1103,18 @@
  },
  {
   "id": "deberes-095",
-  "pregunta": "De acuerdo al REDIPEN-13020, la anulación del otorgamiento de distintivos será:",
+  "pregunta": "De acuerdo al REDIPEN-13020, la anulación del otorgamiento de distintivos, será:",
   "opciones": [
    "Por límite de edad",
    "A juicio del consejo de la distinción",
    "Por haber pasado a la situación de disponibilidad a su solicitud",
-   "Por tener arresto de rigor dentro de los últimos tres años de servicio computados a la fecha"
+   "Por tener arresto de rigor dentro de los últimos tres años de servicio computados ala fecha"
   ],
   "correcta": 1
  },
  {
   "id": "deberes-096",
-  "pregunta": "Tendrá el control de todo el personal de guardia arrestado y que se encuentre trabajando:",
+  "pregunta": "Tendrá el control de todo el personal de guardia arrestado y que se encuentre trabajando.",
   "opciones": [
    "El oficial de guardia de la dependencia",
    "El técnico de guardia de la prevención",
@@ -1125,7 +1125,7 @@
  },
  {
   "id": "deberes-097",
-  "pregunta": "Durante su permanencia en el país acreditado, el agregado naval estará obligado a residir en:",
+  "pregunta": "Durante su permanencia en el país acreditado el agregado naval estará obligado a residir en:",
   "opciones": [
    "Cualquier país",
    "El Perú",
@@ -1147,7 +1147,7 @@
  },
  {
   "id": "deberes-099",
-  "pregunta": "El proceso de formación del personal de grumetes en etapa de formación comprende dos fases, siendo una de ellas:",
+  "pregunta": "El proceso de formación del personal de grumetes en etapa de formación comprende dos fases siendo una de ellas:",
   "opciones": [
    "Adoctrinamiento militar",
    "Inserción a la vida militar",
@@ -1158,7 +1158,7 @@
  },
  {
   "id": "deberes-100",
-  "pregunta": "Son aquellas cuya organización y ejecución corresponde a las Fuerzas Armadas o Policía Nacional del Perú, según el caso, y son las que se encuentran detalladas en el Anexo “B” del RECERNAV-13601:",
+  "pregunta": "Son aquellas cuya organización y ejecución corresponde a las Fuerzas Armadas o Policia Nacional del Perú , según el caso y son las que se encuentran detalladas en el Anexo \"B\" del RECERNAV-13601",
   "opciones": [
    "Las ceremonias institucionales",
    "Las ceremonias nacionales",

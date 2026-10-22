@@ -242,7 +242,7 @@
    "135 MM. X 45 MM.",
    "8 MM. X 5 MM.",
    "50 MM. X 30 MM.",
-   "4 MM. X 3 MM."
+   "4MM. X 3 MM."
   ],
   "correcta": 2,
   "fuente": "ISCON-13303 – Control documental."
@@ -565,8 +565,8 @@
   "opciones": [
    "Texto único de procedimientos administrativos",
    "Texto único ordenado para adquisición",
-   "Texto unificado de procedimientos adquisitivos",
-   "Texto unificado de procedimientos de adquisición"
+   "Texto únificado de procedimientos adquisitivos",
+   "Texto únificado de procedimientos de adquisición"
   ],
   "correcta": 0,
   "fuente": "Normativa administrativa del Estado."
@@ -741,7 +741,7 @@
  },
  {
   "id": "oficinista-062",
-  "pregunta": "Está ubicado debajo del membrete centrado, entre comillas y en letra mayúscula, Century Gothic tamaño 9, ¿a qué descripción corresponde?",
+  "pregunta": "Está ubicado debajo del membrete centrado, entre comillas y en letra mayúscula, Century Gothyc tamaño 9, ¿a qué descripción corresponde?",
   "opciones": [
    "Membrete",
    "Lugar y Fecha",
@@ -1103,8 +1103,8 @@
   "id": "oficinista-092",
   "pregunta": "Víveres procesados de uso inmediato que se entregan al personal de una unidad sólo en casos de emergencia, por cortos periodos de tiempo.",
   "opciones": [
-   "Ración de combate",
-   "Ración de mar",
+   "Racion de combate",
+   "Racion de mar",
    "Ración de emergencia",
    "Rancho naval"
   ],
@@ -1139,17 +1139,17 @@
   "id": "oficinista-095",
   "pregunta": "Principios del sistema nacional de abastecimiento",
   "opciones": [
-   "Economía, eficacia, eficiencia, oportunidad, predictibilidad, racionabilidad, sostenibilidad ambiental, social, económica y transparencia",
-   "Economía, eficacia, eficiencia, racionabilidad, sostenibilidad ambiental, social, economía y transparencia",
-   "Economía, eficacia, eficiencia, oportunidad, predictibilidad, social, economía y transparencia",
-   "Economía, eficacia, eficiencia, oportunidad, predictibilidad, racionabilidad, sostenibilidad ambiental, social, económica"
+   "Ecomia,eficacia,eficiencia,oportunidad, predictibilidad, racionabilidad, sostenibilidad ambiental, social, económica y transparencia",
+   "Economia, eficacia, eficiencia,, racionabilidad, sostenibilidad ambiental, social, economía y transparencia",
+   "Economia, eficaia, eficiencia, oportunidad, predictibilida,, social, economía y transparencia",
+   "Economia, eficaia, eficiencia, oportunidad, predictibilida, racionabilidad, sostenibilidad ambiental, social, económica"
   ],
   "correcta": 0,
   "fuente": "Normativa de abastecimiento del Estado."
  },
  {
   "id": "oficinista-096",
-  "pregunta": "¿Qué significan las siglas \"OSCE\"?",
+  "pregunta": "Que significa las siglas \"OSCE\"",
   "opciones": [
    "Organismo supervisor de contrato del Estado",
    "Organismo supervisor de las contrataciones del Estado",
@@ -1188,7 +1188,7 @@
   "pregunta": "¿Mediante qué dispositivo legal se nombra al técnico supervisor maestro de la Marina de Guerra del Perú?",
   "opciones": [
    "Resolución de la Comandancia General de la Marina",
-   "Resolución Directoral de la Dirección General de Personal de la Marina",
+   "Resolución Directoral de la Dirección General de la Personal de la Marina",
    "Resolución Ministerial",
    "Resolución Suprema"
   ],
